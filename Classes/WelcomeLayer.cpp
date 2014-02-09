@@ -14,6 +14,8 @@ bool WelcomeLayer::init()
 		SpriteFrameCache::getInstance()->addSpriteFramesWithFile("lisa_rest3.plist");
 		SpriteFrameCache::getInstance()->addSpriteFramesWithFile("lisa_rest4.plist");
 
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("00104.wav");
+
 		// add background
 		//Sprite *background = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("lisa_rest00.png"));
 		Sprite *background = Sprite::create("lisa_rest00.png");
@@ -29,7 +31,7 @@ bool WelcomeLayer::init()
 		lisaRest->setAnchorPoint(Point(0, 0));
 		lisaRest->setPosition(107, 0);
 		Animation *animation = Animation::create();
-		animation->setDelayPerUnit(0.05f);
+		animation->setDelayPerUnit(0.08f);
 		for (int  i= 1;  i< 33; i++){
 			char buffer[50] = {0};
 			sprintf(buffer, "lisa_rest%02d.png", i);
@@ -41,6 +43,7 @@ bool WelcomeLayer::init()
 		Animate *animate = Animate::create(animation);
 		lisaRest->runAction(RepeatForever::create(animate));
 		this->addChild(lisaRest);
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("00104.wav", true);
 		return true;
 	}else {
 		return false;

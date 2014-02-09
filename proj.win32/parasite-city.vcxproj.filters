@@ -84,4 +84,21 @@
       <Filter>resource\images</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\Resources\voices\00100.wav">
+      <Filter>resource\voices</Filter>
+    </Media>
+    <Media Include="..\Resources\voices\00101.wav">
+      <Filter>resource\voices</Filter>
+    </Media>
+    <Media Include="..\Resources\voices\00102.wav">
+      <Filter>resource\voices</Filter>
+    </Media>
+    <Media Include="..\Resources\voices\00103.wav">
+      <Filter>resource\voices</Filter>
+    </Media>
+    <Media Include="..\Resources\voices\00104.wav">
+      <Filter>resource\voices</Filter>
+    </Media>
+  </ItemGroup>
 </Project>

@@ -173,6 +173,13 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <Image Include="..\Resources\images\lisa_rest3.png" />
     <Image Include="..\Resources\images\lisa_rest4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\Resources\voices\00100.wav" />
+    <Media Include="..\Resources\voices\00101.wav" />
+    <Media Include="..\Resources\voices\00102.wav" />
+    <Media Include="..\Resources\voices\00103.wav" />
+    <Media Include="..\Resources\voices\00104.wav" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
