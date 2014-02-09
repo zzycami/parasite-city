@@ -10,6 +10,12 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resource\images">
+      <UniqueIdentifier>{3097fa1e-dc12-41bb-bb4e-c11ec877872f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\voices">
+      <UniqueIdentifier>{3fc67340-6331-401a-bbfd-22459b1ff25a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -19,6 +25,12 @@
       <Filter>Classes</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeLayer.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +44,44 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\WelcomeScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WelcomeLayer.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">
       <Filter>resource</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Resources\images\lisa_rest1.plist">
+      <Filter>resource\images</Filter>
+    </None>
+    <None Include="..\Resources\images\lisa_rest2.plist">
+      <Filter>resource\images</Filter>
+    </None>
+    <None Include="..\Resources\images\lisa_rest3.plist">
+      <Filter>resource\images</Filter>
+    </None>
+    <None Include="..\Resources\images\lisa_rest4.plist">
+      <Filter>resource\images</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\images\lisa_rest1.png">
+      <Filter>resource\images</Filter>
+    </Image>
+    <Image Include="..\Resources\images\lisa_rest2.png">
+      <Filter>resource\images</Filter>
+    </Image>
+    <Image Include="..\Resources\images\lisa_rest3.png">
+      <Filter>resource\images</Filter>
+    </Image>
+    <Image Include="..\Resources\images\lisa_rest4.png">
+      <Filter>resource\images</Filter>
+    </Image>
   </ItemGroup>
 </Project>
