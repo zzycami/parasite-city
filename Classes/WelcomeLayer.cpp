@@ -1,6 +1,9 @@
 #include "WelcomeLayer.h"
 
-WelcomeLayer::WelcomeLayer(){}
+WelcomeLayer::WelcomeLayer()
+{
+    volume = 0.8f;
+}
 
 WelcomeLayer::~WelcomeLayer(){}
 
@@ -15,7 +18,7 @@ bool WelcomeLayer::init()
 		SpriteFrameCache::getInstance()->addSpriteFramesWithFile("lisa_rest4.plist");
         SpriteFrameCache::getInstance()->addSpriteFramesWithFile("menu.plist");
 
-		CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect("00104.wav");
+		SimpleAudioEngine::getInstance()->preloadEffect("00104.wav");
 
 		// add background
 		//Sprite *background = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("lisa_rest00.png"));
@@ -43,7 +46,8 @@ bool WelcomeLayer::init()
 		Animate *animate = Animate::create(animation);
 		lisaRest->runAction(RepeatForever::create(animate));
 		this->addChild(lisaRest);
-		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("00104.wav", true);
+        SimpleAudioEngine::getInstance()->setEffectsVolume(volume);
+		SimpleAudioEngine::getInstance()->playEffect("00104.wav", true);
         
         initMenu();
 		return true;
@@ -137,6 +141,12 @@ void WelcomeLayer::initMenu()
         stageMenuItem->setEnabled(false);
         menu->addChild(stageMenuItem);
     }
+    
+    ControlSlider *volumeSlider = initVolumeSlider();
+    menuYPosition = menuYPosition - volumeSlider->getContentSize().height - MenuGapMargin;
+    volumeSlider->setPosition(menuXPosition, menuYPosition);
+    this->addChild(volumeSlider);
+    
     menuYPosition = menuYPosition - galleryMenuItem->getContentSize().height - MenuGapMargin;
     galleryMenuItem->setPosition(menuXPosition, menuYPosition);
     galleryMenuItem->setEnabled(false);
@@ -156,10 +166,28 @@ void WelcomeLayer::initMenu()
     this->addChild(menu);
 }
 
+ControlSlider* WelcomeLayer::initVolumeSlider()
+{
+    ControlSlider *volumeSlider = ControlSlider::create("progress.png", "background.png", "thumb.png");
+    volumeSlider->setMaximumValue(1.0f);
+    volumeSlider->setMinimumValue(0.0f);
+    volumeSlider->setValue(volume);
+    volumeSlider->addTargetWithActionForControlEvents(this, cccontrol_selector(WelcomeLayer::volumeChange), Control::EventType::VALUE_CHANGED);
+    volumeSlider->setAnchorPoint(Point::ZERO);
+    return volumeSlider;
+}
+
+void WelcomeLayer::volumeChange(Object *sender, Control::EventType eventType)
+{
+    ControlSlider *volumeSlider = (ControlSlider*)sender;
+    volume = volumeSlider->getValue();
+    SimpleAudioEngine::getInstance()->setEffectsVolume(volume);
+    SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(volume);
+}
+
 void WelcomeLayer::onEnter()
 {
     Layer::onEnter();
-    
 }
 
 void WelcomeLayer::onExit()

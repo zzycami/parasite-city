@@ -1,8 +1,11 @@
 #pragma once
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
+#include "cocos-ext.h"
 
 using namespace cocos2d;
+using namespace cocos2d::extension;
+using namespace CocosDenshion;
 
 const float MenuRightMargin = 40;
 const float MenuTopMargin = 60;
@@ -26,4 +29,7 @@ public:
     void menuGalleryCallBack(Object *sender);
 private:
     void initMenu();
+    ControlSlider* initVolumeSlider();
+    void volumeChange(Object *sender, Control::EventType eventType);
+    float volume;
 };
