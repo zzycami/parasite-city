@@ -6,7 +6,10 @@ WelcomeLayer::WelcomeLayer()
     volume = 0.8f;
 }
 
-WelcomeLayer::~WelcomeLayer(){}
+WelcomeLayer::~WelcomeLayer()
+{
+	SimpleAudioEngine::getInstance()->stopAllEffects();
+}
 
 bool WelcomeLayer::init()
 {
@@ -71,10 +74,11 @@ void WelcomeLayer::initMenu()
     startSelect->setAnchorPoint(Point::ZERO);
     gameStartSelect->addChild(startSelect);
     gameStartSelect->addChild(startWhite);
-    auto *gameStartMenuItem = MenuItemSprite::create(gameStartNormal, gameStartSelect, CC_CALLBACK_1(WelcomeLayer::menuNewGameCallBack, this));
-    gameStartMenuItem->setAnchorPoint(Point::ZERO);
-    float menuXPosition = winSize.width - gameStartMenuItem->getContentSize().width - MenuRightMargin;
+    auto *gameStartMenuItem = MenuItemSprite::create(gameStartNormal, gameStartSelect, CC_CALLBACK_1(WelcomeLayer::menuItemSelectedAnimate, this));
+    gameStartMenuItem->setAnchorPoint(Point(1, 0));
+    float menuXPosition = winSize.width - MenuRightMargin;
     float menuYPosition = winSize.height - gameStartMenuItem->getContentSize().height - MenuTopMargin;
+	gameStartMenuItem->setTag(MenuTagStart);
     gameStartMenuItem->setPosition(menuXPosition, menuYPosition);
     gameStartMenuItem->setEnabled(true);
     
@@ -87,8 +91,9 @@ void WelcomeLayer::initMenu()
     gallerySelectBackground->setAnchorPoint(Point::ZERO);
     gallerySelect->addChild(gallerySelectBackground);
     gallerySelect->addChild(galleryWhite);
-    auto *galleryMenuItem = MenuItemSprite::create(galleryNormal, gallerySelect, galleryGrey, CC_CALLBACK_1(WelcomeLayer::menuGalleryCallBack, this));
-    galleryMenuItem->setAnchorPoint(Point::ZERO);
+    auto *galleryMenuItem = MenuItemSprite::create(galleryNormal, gallerySelect, galleryGrey, CC_CALLBACK_1(WelcomeLayer::menuItemSelectedAnimate, this));
+	galleryMenuItem->setTag(MenuTagGallery);
+    galleryMenuItem->setAnchorPoint(Point(1, 0));
     
     Sprite *omakeWhite = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("omake_white.png"));
     Sprite *omakeSelectBackground = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("omake_select.png"));
@@ -99,12 +104,14 @@ void WelcomeLayer::initMenu()
     omakeSelectBackground->setAnchorPoint(Point::ZERO);
     omakeSelect->addChild(omakeSelectBackground);
     omakeSelect->addChild(omakeWhite);
-    auto *omakeMenuItem = MenuItemSprite::create(omakeNormal, omakeSelect, omakeGrey, CC_CALLBACK_1(WelcomeLayer::menuOmakeCallBack, this));
-    omakeMenuItem->setAnchorPoint(Point::ZERO);
+    auto *omakeMenuItem = MenuItemSprite::create(omakeNormal, omakeSelect, omakeGrey, CC_CALLBACK_1(WelcomeLayer::menuItemSelectedAnimate, this));
+	omakeMenuItem->setTag(MenuTagOmake);
+    omakeMenuItem->setAnchorPoint(Point(1, 0));
     
     Sprite *exitNormal = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("exit_white.png"));
-    auto exitMenuItem = MenuItemSprite::create(exitNormal, exitNormal, CC_CALLBACK_1(WelcomeLayer::menuExitCallBack, this));
-    exitMenuItem->setAnchorPoint(Point::ZERO);
+    auto exitMenuItem = MenuItemSprite::create(exitNormal, exitNormal, CC_CALLBACK_1(WelcomeLayer::menuItemSelectedAnimate, this));
+    exitMenuItem->setAnchorPoint(Point(1, 0));
+	exitMenuItem->setTag(MenuTagExit);
     
     Menu *menu = Menu::create(gameStartMenuItem, NULL);
     
@@ -123,23 +130,12 @@ void WelcomeLayer::initMenu()
         stageSelectButton->addChild(stageSelect);
         stageSelectButton->addChild(stageWhite);
         MenuItemSprite *stageMenuItem;
-        switch (i) {
-            case 1:
-                stageMenuItem = MenuItemSprite::create(stageNormal, stageSelectButton, stageGrey, CC_CALLBACK_1(WelcomeLayer::menuStage1CallBack, this));
-                break;
-            case 2:
-                stageMenuItem = MenuItemSprite::create(stageNormal, stageSelectButton, stageGrey, CC_CALLBACK_1(WelcomeLayer::menuStage2CallBack, this));
-                break;
-            case 3:
-                stageMenuItem = MenuItemSprite::create(stageNormal, stageSelectButton, stageGrey, CC_CALLBACK_1(WelcomeLayer::menuStage3CallBack, this));
-                break;
-            default:
-                break;
-        }
-        stageMenuItem->setAnchorPoint(Point::ZERO);
+		stageMenuItem = MenuItemSprite::create(stageNormal, stageSelectButton, stageGrey, CC_CALLBACK_1(WelcomeLayer::menuItemSelectedAnimate, this));
+        stageMenuItem->setAnchorPoint(Point(1, 0));
         menuYPosition = menuYPosition - stageMenuItem->getContentSize().height - MenuGapMargin;
         stageMenuItem->setPosition(menuXPosition, menuYPosition);
         stageMenuItem->setEnabled(false);
+		stageMenuItem->setTag(100 + i);
         menu->addChild(stageMenuItem);
     }
     
@@ -147,17 +143,17 @@ void WelcomeLayer::initMenu()
     menuYPosition = menuYPosition - volumeSlider->getContentSize().height - MenuGapMargin;
     volumeSlider->setPosition(menuXPosition, menuYPosition);
     this->addChild(volumeSlider);
+
+	menuYPosition = menuYPosition - omakeMenuItem->getContentSize().height - MenuGapMargin;
+    omakeMenuItem->setPosition(menuXPosition, menuYPosition);
+    omakeMenuItem->setEnabled(false);
+    menu->addChild(omakeMenuItem);
     
     menuYPosition = menuYPosition - galleryMenuItem->getContentSize().height - MenuGapMargin;
     galleryMenuItem->setPosition(menuXPosition, menuYPosition);
     galleryMenuItem->setEnabled(false);
     menu->addChild(galleryMenuItem);
-    
-    menuYPosition = menuYPosition - omakeMenuItem->getContentSize().height - MenuGapMargin;
-    omakeMenuItem->setPosition(menuXPosition, menuYPosition);
-    omakeMenuItem->setEnabled(false);
-    menu->addChild(omakeMenuItem);
-    
+
     menuYPosition = menuYPosition - exitMenuItem->getContentSize().height - MenuGapMargin;
     exitMenuItem->setPosition(menuXPosition, menuYPosition);
     exitMenuItem->setEnabled(true);
@@ -169,13 +165,52 @@ void WelcomeLayer::initMenu()
 
 ControlSlider* WelcomeLayer::initVolumeSlider()
 {
-    ControlSlider *volumeSlider = ControlSlider::create("progress.png", "background.png", "thumb.png");
+    ControlSlider *volumeSlider = ControlSlider::create("background.png", "progress.png", "thumb.png");
     volumeSlider->setMaximumValue(1.0f);
     volumeSlider->setMinimumValue(0.0f);
     volumeSlider->setValue(volume);
     volumeSlider->addTargetWithActionForControlEvents(this, cccontrol_selector(WelcomeLayer::volumeChange), Control::EventType::VALUE_CHANGED);
-    volumeSlider->setAnchorPoint(Point::ZERO);
+	volumeSlider->setAnchorPoint(Point(1, 0));
     return volumeSlider;
+}
+
+void WelcomeLayer::menuItemSelectedAnimate(Object *sender)
+{
+	MenuItemSprite *menuItem = (MenuItemSprite *)sender;
+	Size winSize = Director::getInstance()->getWinSize();
+	auto *actionMove = MoveTo::create(0.1f, Point(menuItem->getPositionX() - 30, menuItem->getPositionY()));
+	auto *actionBack = MoveTo::create(0.1f, Point(winSize.width + menuItem->getContentSize().width, menuItem->getPositionY()));
+
+	function<void(void)> callback;
+	switch (menuItem->getTag())
+	{
+	case MenuTagStart:
+		callback = bind(&WelcomeLayer::menuNewGameCallBack, this);
+		break;
+	case MenuTagExit:
+		callback = bind(&WelcomeLayer::menuExitCallBack, this);
+		break;
+	case MenuTagGallery:
+		callback = bind(&WelcomeLayer::menuGalleryCallBack, this);
+		break;
+	case MenuTagOmake:
+		callback = bind(&WelcomeLayer::menuOmakeCallBack, this);
+		break;
+	case MenuTagStage1:
+		callback = bind(&WelcomeLayer::menuStage1CallBack, this);
+		break;
+	case MenuTagStage2:
+		callback = bind(&WelcomeLayer::menuStage2CallBack, this);
+		break;
+	case MenuTagStage3:
+		callback = bind(&WelcomeLayer::menuStage3CallBack, this);
+		break;
+	default:
+		break;
+	}
+	CallFunc *actionDone = CallFunc::create(callback);
+	Sequence *sequence = Sequence::create(actionMove, actionBack, actionDone, NULL);
+	menuItem->runAction(sequence);
 }
 
 void WelcomeLayer::volumeChange(Object *sender, Control::EventType eventType)
@@ -196,7 +231,7 @@ void WelcomeLayer::onExit()
     Layer::onExit();
 }
 
-void WelcomeLayer::menuExitCallBack(cocos2d::Object *sender)
+void WelcomeLayer::menuExitCallBack()
 {
     Director::getInstance()->end();
     
@@ -205,24 +240,25 @@ void WelcomeLayer::menuExitCallBack(cocos2d::Object *sender)
 #endif
 }
 
-void WelcomeLayer::menuGalleryCallBack(cocos2d::Object *sender)
-{}
+void WelcomeLayer::menuGalleryCallBack()
+{
+}
 
-void WelcomeLayer::menuNewGameCallBack(cocos2d::Object *sender)
+void WelcomeLayer::menuNewGameCallBack()
 {
     auto *helloWorldScene = HelloWorld::createScene();
     TransitionScene *transition = TransitionFlipAngular::create(1, helloWorldScene);
     Director::getInstance()->replaceScene(transition);
 }
 
-void WelcomeLayer::menuOmakeCallBack(cocos2d::Object *sender)
+void WelcomeLayer::menuOmakeCallBack()
 {}
 
-void WelcomeLayer::menuStage1CallBack(cocos2d::Object *sender)
+void WelcomeLayer::menuStage1CallBack()
 {}
 
-void WelcomeLayer::menuStage2CallBack(cocos2d::Object *sender)
+void WelcomeLayer::menuStage2CallBack()
 {}
 
-void WelcomeLayer::menuStage3CallBack(cocos2d::Object *sender)
+void WelcomeLayer::menuStage3CallBack()
 {}
