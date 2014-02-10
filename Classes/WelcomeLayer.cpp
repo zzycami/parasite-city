@@ -1,4 +1,5 @@
 #include "WelcomeLayer.h"
+#include "HelloWorldScene.h"
 
 WelcomeLayer::WelcomeLayer()
 {
@@ -208,7 +209,11 @@ void WelcomeLayer::menuGalleryCallBack(cocos2d::Object *sender)
 {}
 
 void WelcomeLayer::menuNewGameCallBack(cocos2d::Object *sender)
-{}
+{
+    auto *helloWorldScene = HelloWorld::createScene();
+    TransitionScene *transition = TransitionFlipAngular::create(1, helloWorldScene);
+    Director::getInstance()->replaceScene(transition);
+}
 
 void WelcomeLayer::menuOmakeCallBack(cocos2d::Object *sender)
 {}
