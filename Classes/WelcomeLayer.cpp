@@ -23,6 +23,7 @@ bool WelcomeLayer::init()
         SpriteFrameCache::getInstance()->addSpriteFramesWithFile("menu.plist");
 
 		SimpleAudioEngine::getInstance()->preloadEffect("00104.wav");
+        SimpleAudioEngine::getInstance()->preloadEffect("00258.wav");
 
 		// add background
 		//Sprite *background = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("lisa_rest00.png"));
@@ -165,7 +166,7 @@ void WelcomeLayer::initMenu()
 
 ControlSlider* WelcomeLayer::initVolumeSlider()
 {
-    ControlSlider *volumeSlider = ControlSlider::create("background.png", "progress.png", "thumb.png");
+    ControlSlider *volumeSlider = ControlSlider::create("slider_bg.png", "slider_pg.png", "slider.png");
     volumeSlider->setMaximumValue(1.0f);
     volumeSlider->setMinimumValue(0.0f);
     volumeSlider->setValue(volume);
@@ -179,7 +180,7 @@ void WelcomeLayer::menuItemSelectedAnimate(Object *sender)
 	MenuItemSprite *menuItem = (MenuItemSprite *)sender;
 	Size winSize = Director::getInstance()->getWinSize();
 	auto *actionMove = MoveTo::create(0.1f, Point(menuItem->getPositionX() - 30, menuItem->getPositionY()));
-	auto *actionBack = MoveTo::create(0.1f, Point(winSize.width + menuItem->getContentSize().width, menuItem->getPositionY()));
+	auto *actionBack = MoveTo::create(0.2f, Point(winSize.width + menuItem->getContentSize().width, menuItem->getPositionY()));
 
 	function<void(void)> callback;
 	switch (menuItem->getTag())
@@ -210,6 +211,7 @@ void WelcomeLayer::menuItemSelectedAnimate(Object *sender)
 	}
 	CallFunc *actionDone = CallFunc::create(callback);
 	Sequence *sequence = Sequence::create(actionMove, actionBack, actionDone, NULL);
+    SimpleAudioEngine::getInstance()->playEffect("00258.wav");
 	menuItem->runAction(sequence);
 }
 
