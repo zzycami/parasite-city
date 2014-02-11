@@ -44,6 +44,8 @@ void AppDelegate::setResourceSearchResolution()
     paths.push_back("voices");
 	paths.push_back("images/lisa_rest");
     paths.push_back("images/menu");
+    paths.push_back("images/scene");
+    paths.push_back("images/object");
     FileUtils::getInstance()->setSearchResolutionsOrder(paths);
 }
 

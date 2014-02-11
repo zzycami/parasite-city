@@ -1,5 +1,5 @@
 #include "WelcomeLayer.h"
-#include "HelloWorldScene.h"
+#include "SewerStartScene.h"
 
 WelcomeLayer::WelcomeLayer()
 {
@@ -248,8 +248,8 @@ void WelcomeLayer::menuGalleryCallBack()
 
 void WelcomeLayer::menuNewGameCallBack()
 {
-    auto *helloWorldScene = HelloWorld::createScene();
-    TransitionScene *transition = TransitionFlipAngular::create(1, helloWorldScene);
+    auto *sewerStartScene = SewerStartScene::create();
+    TransitionScene *transition = TransitionFade::create(1, sewerStartScene);
     Director::getInstance()->replaceScene(transition);
 }
 
