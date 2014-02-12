@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #include "WelcomeScene.h"
+#include "SewerStartScene.h"
 
 USING_NS_CC;
 

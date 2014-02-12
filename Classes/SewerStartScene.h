@@ -19,6 +19,11 @@ public:
     ~SewerStartScene();
     virtual bool init();
     CREATE_FUNC(SewerStartScene);
+    
+    // override
+    void onTouchesBegan(const std::vector<Touch*>& touches, Event *event);
+    void onTouchesMoved(const std::vector<Touch*>& touches, Event *event);
+    void onTouchesEnded(const std::vector<Touch*>& touches, Event *event);
 private:
     Layer *backgroundLayer;
     SewerStartLayer *sewerStartLayer;

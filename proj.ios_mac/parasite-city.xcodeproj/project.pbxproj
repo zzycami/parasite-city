@@ -61,6 +61,7 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
+		511F067918AB1BEC00BC8F25 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 511F067818AB1BEC00BC8F25 /* GLES-Render.cpp */; };
 		514E744818A860020052B7B1 /* WelcomeLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514E744418A860020052B7B1 /* WelcomeLayer.cpp */; };
 		514E744918A860020052B7B1 /* WelcomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514E744618A860020052B7B1 /* WelcomeScene.cpp */; };
 		514E745118A8602B0052B7B1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514E745018A8602B0052B7B1 /* OpenGLES.framework */; };
@@ -378,6 +379,8 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
+		511F067118AB1BE100BC8F25 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
+		511F067818AB1BEC00BC8F25 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
 		514E744418A860020052B7B1 /* WelcomeLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WelcomeLayer.cpp; path = ../Classes/WelcomeLayer.cpp; sourceTree = "<group>"; };
 		514E744518A860020052B7B1 /* WelcomeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WelcomeLayer.h; path = ../Classes/WelcomeLayer.h; sourceTree = "<group>"; };
 		514E744618A860020052B7B1 /* WelcomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WelcomeScene.cpp; path = ../Classes/WelcomeScene.cpp; sourceTree = "<group>"; };
@@ -551,7 +554,9 @@
 				514E744718A860020052B7B1 /* WelcomeScene.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				511F067818AB1BEC00BC8F25 /* GLES-Render.cpp */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
+				511F067118AB1BE100BC8F25 /* GLES-Render.h */,
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
 				516AF3E718A9CE79005CC2C8 /* SewerStartScene.h */,
 				516AF3E818A9CF0A005CC2C8 /* SewerStartScene.cpp */,
@@ -1134,6 +1139,7 @@
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				514E744818A860020052B7B1 /* WelcomeLayer.cpp in Sources */,
+				511F067918AB1BEC00BC8F25 /* GLES-Render.cpp in Sources */,
 				516AF3ED18A9DCFA005CC2C8 /* SewerStartLayer.cpp in Sources */,
 				514E744918A860020052B7B1 /* WelcomeScene.cpp in Sources */,
 				516AF3E918A9CF0A005CC2C8 /* SewerStartScene.cpp in Sources */,
