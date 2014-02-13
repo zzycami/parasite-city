@@ -13,6 +13,7 @@ using namespace cocos2d;
 typedef enum{
     ACTION_STATE_NONE = 0,
     ACTION_STATE_IDLE,
+	ACTION_STATE_RUN,
     ACTION_STATE_WALK,
     ACTION_STATE_ATTACK,
     ACTION_STATE_HURT,

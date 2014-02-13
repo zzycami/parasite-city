@@ -53,6 +53,7 @@ void ActionSprite::walk(cocos2d::Point direction)
     }
 }
 
+
 void ActionSprite::attack()
 {
     if (changeState(ACTION_STATE_ATTACK)) {
@@ -83,4 +84,13 @@ Animation* ActionSprite::createAnimation(const char *fmt, int count, float fps)
 {
     Animation *animation = Animation::create();
     animation->setDelayPerUnit(1/fps);
+	for (int i = 0; i < count; i++){
+		const char *filename = String::createWithFormat(fmt, i)->getCString();
+		Texture2D *texture = Director::getInstance()->getTextureCache()->addImage(filename);
+		texture->setAliasTexParameters();
+		Rect frameRect = Rect(0, 0, texture->getContentSize().width, texture->getContentSize().height);
+		SpriteFrame *frame = SpriteFrame::createWithTexture(texture, frameRect);
+		animation->addSpriteFrame(frame);
+	}
+	return animation;
 }

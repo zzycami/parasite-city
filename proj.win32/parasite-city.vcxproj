@@ -133,9 +133,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\ActionSprite.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\GLES-Render.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\HeroSprite.cpp" />
     <ClCompile Include="..\Classes\PhysicalSprite.cpp" />
     <ClCompile Include="..\Classes\SewerStartLayer.cpp" />
     <ClCompile Include="..\Classes\SewerStartScene.cpp" />
@@ -145,10 +147,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\ActionSprite.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Common.h" />
     <ClInclude Include="..\Classes\GLES-Render.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\HeroSprite.h" />
     <ClInclude Include="..\Classes\PhysicalSprite.h" />
     <ClInclude Include="..\Classes\SewerStartLayer.h" />
     <ClInclude Include="..\Classes\SewerStartScene.h" />

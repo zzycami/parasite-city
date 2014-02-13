@@ -21,12 +21,23 @@ SewerStartLayer::~SewerStartLayer()
     delete world;
 }
 
+void SewerStartLayer::initHero()
+{
+	hero = HeroSprite::create();
+	hero->setPosition(Point(80, GroundBottomHeight+80));
+	hero->walk(Point::ZERO);
+	this->addChild(hero);
+}
+
 bool SewerStartLayer::init()
 {
     initBox2d();
     
     if (Layer::init()) {
+		initHero();
         initStaticObjects();
+
+
         steelBox1 = Sprite::create("steel_box.png");
         steelBox1->setPosition(SteelBox1Position.x + steelBox1->getContentSize().width/2, SteelBox1Position.y + steelBox1->getContentSize().height/2);
         this->addChild(steelBox1);

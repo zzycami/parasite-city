@@ -30,7 +30,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = WelcomeScene::create();
+    auto scene = SewerStartScene::create();
 
     // run
     director->runWithScene(scene);
@@ -49,6 +49,9 @@ void AppDelegate::setResourceSearchResolution()
     paths.push_back("images/object");
     paths.push_back("pd_resources/Sounds");
     paths.push_back("pd_resources/Sprites");
+	paths.push_back("images/hero/idle");
+	paths.push_back("images/hero/run");
+	paths.push_back("images/hero");
     FileUtils::getInstance()->setSearchResolutionsOrder(paths);
 }
 

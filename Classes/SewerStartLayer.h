@@ -10,6 +10,7 @@
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
 #include "GLES-Render.h"
+#include "HeroSprite.h"
 
 using namespace cocos2d;
 #define PTM_RATIO 32.0
@@ -45,10 +46,12 @@ private:
     b2Body *platform1Body;
     Sprite *platform2;
     b2Body *platform2Body;
+	ActionSprite *hero;
     
     
     
     void initBox2d();
+	void initHero();
     void initStaticObjects();
     void tick(float dt);
     virtual void draw() override;

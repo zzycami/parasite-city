@@ -35,7 +35,7 @@ bool WelcomeLayer::init()
 		// add the girl sitting
 		//Sprite *lisaRest = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("lisa_rest01.png"));
 		Sprite *lisaRest = Sprite::create("lisa_rest01.png");
-		lisaRest->getTexture()->setAntiAliasTexParameters();
+		lisaRest->getTexture()->setAliasTexParameters();
 		lisaRest->setAnchorPoint(Point(0, 0));
 		lisaRest->setPosition(107, 0);
 		Animation *animation = Animation::create();
@@ -45,7 +45,7 @@ bool WelcomeLayer::init()
 			sprintf(buffer, "lisa_rest%02d.png", i);
 			//SpriteFrame *frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(buffer);
 			SpriteFrame *frame = SpriteFrame::create(buffer, Rect(0, 0, 686, 629));
-			frame->getTexture()->setAntiAliasTexParameters();
+			frame->getTexture()->setAliasTexParameters();
 			animation->addSpriteFrame(frame);
 		}
 		Animate *animate = Animate::create(animation);
