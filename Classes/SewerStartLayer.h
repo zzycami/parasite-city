@@ -39,10 +39,13 @@ private:
     Sprite *steelBox2;
     b2World *world;
     b2Body *groundBody;
+    Sprite *platform1;
+    b2Body *platform1Body;
     b2Body *steelBox1Body;
     b2Body *steelBox2Body;
     
     void initBox2d();
+    void initStaticObjects();
     void tick(float dt);
     virtual void draw() override;
     void initDebugDraw();
