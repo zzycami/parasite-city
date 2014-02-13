@@ -47,6 +47,8 @@ void AppDelegate::setResourceSearchResolution()
     paths.push_back("images/menu");
     paths.push_back("images/scene");
     paths.push_back("images/object");
+    paths.push_back("pd_resources/Sounds");
+    paths.push_back("pd_resources/Sprites");
     FileUtils::getInstance()->setSearchResolutionsOrder(paths);
 }
 

@@ -36,13 +36,17 @@ public:
 private:
     GLESDebugDraw *debugDraw;
     Sprite *steelBox1;
+    b2Body *steelBox1Body;
     Sprite *steelBox2;
+    b2Body *steelBox2Body;
     b2World *world;
     b2Body *groundBody;
     Sprite *platform1;
     b2Body *platform1Body;
-    b2Body *steelBox1Body;
-    b2Body *steelBox2Body;
+    Sprite *platform2;
+    b2Body *platform2Body;
+    
+    
     
     void initBox2d();
     void initStaticObjects();

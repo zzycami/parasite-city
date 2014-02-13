@@ -153,6 +153,9 @@
 		516AF3FA18A9EBE8005CC2C8 /* 00239.wav in Resources */ = {isa = PBXBuildFile; fileRef = 516AF3F718A9EBE8005CC2C8 /* 00239.wav */; };
 		516AF3FB18A9EBE8005CC2C8 /* 00239.wav in Resources */ = {isa = PBXBuildFile; fileRef = 516AF3F718A9EBE8005CC2C8 /* 00239.wav */; };
 		519312E518AC601E00B86F41 /* platform1.png in Resources */ = {isa = PBXBuildFile; fileRef = 519312E418AC601E00B86F41 /* platform1.png */; };
+		519312E718AC9CD200B86F41 /* pd_resources in Resources */ = {isa = PBXBuildFile; fileRef = 519312E618AC9CD200B86F41 /* pd_resources */; };
+		519312EA18ACBC7600B86F41 /* ActionSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 519312E918ACBC7600B86F41 /* ActionSprite.cpp */; };
+		519312EB18ACBC7600B86F41 /* ActionSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 519312E918ACBC7600B86F41 /* ActionSprite.cpp */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -470,6 +473,9 @@
 		516AF3F618A9EBE8005CC2C8 /* 00238.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 00238.wav; path = voices/00238.wav; sourceTree = "<group>"; };
 		516AF3F718A9EBE8005CC2C8 /* 00239.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 00239.wav; path = voices/00239.wav; sourceTree = "<group>"; };
 		519312E418AC601E00B86F41 /* platform1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = platform1.png; path = images/object/platform1.png; sourceTree = "<group>"; };
+		519312E618AC9CD200B86F41 /* pd_resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = pd_resources; sourceTree = "<group>"; };
+		519312E818AC9D8F00B86F41 /* ActionSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionSprite.h; path = ../Classes/ActionSprite.h; sourceTree = "<group>"; };
+		519312E918ACBC7600B86F41 /* ActionSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ActionSprite.cpp; path = ../Classes/ActionSprite.cpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -560,6 +566,8 @@
 				516AF3E818A9CF0A005CC2C8 /* SewerStartScene.cpp */,
 				516AF3EB18A9DB83005CC2C8 /* SewerStartLayer.h */,
 				516AF3EC18A9DCFA005CC2C8 /* SewerStartLayer.cpp */,
+				519312E818AC9D8F00B86F41 /* ActionSprite.h */,
+				519312E918ACBC7600B86F41 /* ActionSprite.cpp */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -805,6 +813,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				519312E618AC9CD200B86F41 /* pd_resources */,
 				516AF33818A9B320005CC2C8 /* images */,
 				516AF32D18A9B305005CC2C8 /* voices */,
 				514E746018A8BC470052B7B1 /* thumb.png */,
@@ -1055,6 +1064,7 @@
 				516AF3AD18A9B3FE005CC2C8 /* lisa_rest29.png in Resources */,
 				516AF3C018A9B417005CC2C8 /* lisa_rest3.png in Resources */,
 				516AF3F418A9EAC9005CC2C8 /* voice.txt in Resources */,
+				519312E718AC9CD200B86F41 /* pd_resources in Resources */,
 				516AF36C18A9B3EF005CC2C8 /* start_white.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
@@ -1133,6 +1143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				519312EA18ACBC7600B86F41 /* ActionSprite.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -1153,6 +1164,7 @@
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				516AF3EA18A9CF0A005CC2C8 /* SewerStartScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				519312EB18ACBC7600B86F41 /* ActionSprite.cpp in Sources */,
 				516AF3EE18A9DCFA005CC2C8 /* SewerStartLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

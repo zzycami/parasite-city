@@ -183,14 +183,11 @@ void SewerStartLayer::initBox2d()
     
     // ground box shape
     b2EdgeShape groundBox;
-    int stageHeight = 360;
     
     // bottom
     groundBox.Set(b2Vec2(0, GroundBottomHeight/PTM_RATIO), b2Vec2(453/PTM_RATIO, GroundBottomHeight/PTM_RATIO));
     groundBody->CreateFixture(&groundBox, 0);
-    groundBox.Set(b2Vec2(533/PTM_RATIO, GroundBottomHeight/PTM_RATIO), b2Vec2(1070/PTM_RATIO, GroundBottomHeight/PTM_RATIO));
-    groundBody->CreateFixture(&groundBox, 0);
-    groundBox.Set(b2Vec2(1070/PTM_RATIO, (stageHeight + GroundBottomHeight)/PTM_RATIO), b2Vec2(SceneSize.width/PTM_RATIO, (stageHeight + GroundBottomHeight)/PTM_RATIO));
+    groundBox.Set(b2Vec2(533/PTM_RATIO, GroundBottomHeight/PTM_RATIO), b2Vec2(SceneSize.width/PTM_RATIO, GroundBottomHeight/PTM_RATIO));
     groundBody->CreateFixture(&groundBox, 0);
     
     // top
@@ -202,9 +199,7 @@ void SewerStartLayer::initBox2d()
     groundBody->CreateFixture(&groundBox, 0);
     
     // right
-    groundBox.Set(b2Vec2(SceneSize.width/PTM_RATIO, SceneSize.height/PTM_RATIO), b2Vec2(SceneSize.width/PTM_RATIO, (stageHeight + GroundBottomHeight)/PTM_RATIO));
-    groundBody->CreateFixture(&groundBox, 0);
-    groundBox.Set(b2Vec2(1070/PTM_RATIO, (stageHeight + GroundBottomHeight)/PTM_RATIO), b2Vec2(1070/PTM_RATIO, GroundBottomHeight/PTM_RATIO));
+    groundBox.Set(b2Vec2(SceneSize.width/PTM_RATIO, SceneSize.height/PTM_RATIO), b2Vec2(SceneSize.width/PTM_RATIO, 0));
     groundBody->CreateFixture(&groundBox, 0);
     
     initDebugDraw();
@@ -214,6 +209,10 @@ void SewerStartLayer::initStaticObjects()
 {
     const Point platform1Position = Point(415, 321);
     const Size platform1Size = Size(499, 112);
+    
+    const Point platform2Position = Point(1221, 201);
+    const Size platform2Size = Size(302, 352);
+    
     platform1 = Sprite::create();
     platform1->setContentSize(platform1Size);
     platform1->setPosition(platform1Position);
@@ -231,5 +230,22 @@ void SewerStartLayer::initStaticObjects()
     platform1FixtureDef.shape = &boxShape;
     platform1FixtureDef.userData = platform1;
     platform1Body->CreateFixture(&platform1FixtureDef);
+    
+    platform2 = Sprite::create();
+    platform2->setContentSize(platform2Size);
+    platform2->setPosition(platform2Position);
+    this->addChild(platform2);
+    
+    b2BodyDef platform2BodyDef;
+    platform2BodyDef.type = b2_staticBody;
+    platform2BodyDef.position.Set(platform2->getPositionX()/PTM_RATIO, platform2->getPositionY()/PTM_RATIO);
+    platform2Body = world->CreateBody(&platform2BodyDef);
+    
+    b2FixtureDef platform2FixtureDef;
+    boxShape.SetAsBox(platform2->getContentSize().width/PTM_RATIO/2, platform2->getContentSize().height/PTM_RATIO/2);
+    platform2FixtureDef.shape = &boxShape;
+    platform2FixtureDef.friction = 0.5;
+    platform2FixtureDef.userData = platform2;
+    platform2Body->CreateFixture(&platform2FixtureDef);
     
 }
