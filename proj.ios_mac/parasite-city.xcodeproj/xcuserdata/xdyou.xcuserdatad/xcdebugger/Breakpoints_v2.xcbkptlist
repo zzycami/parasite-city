@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/WelcomeLayer.cpp"
+            timestampString = "413774992.372462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "WelcomeLayer::initMenu()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/WelcomeLayer.cpp"
+            timestampString = "413774992.372462"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "WelcomeLayer::initVolumeSlider()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../cocos2d/extensions/GUI/CCControlExtension/CCControlSlider.cpp"
+            timestampString = "413710543.656387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "ControlSlider::create(const char* bgFile, const char* progressFile, const char* thumbFile)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::extension::ControlSlider::create(char const*, char const*, char const*)"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/cocos2d/extensions/GUI/CCControlExtension/CCControlSlider.cpp"
+                  timestampString = "413710550.134113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "cocos2d::extension::ControlSlider::create(char const*, char const*, char const*)"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/cocos2d/extensions/GUI/CCControlExtension/CCControlSlider.cpp"
+                  timestampString = "413710550.134894"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/SewerStartLayer.cpp"
+            timestampString = "413886509.617458"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "SewerStartLayer::draw()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../cocos2d/external/Box2D/Dynamics/b2World.cpp"
+            timestampString = "413875414.365723"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1149"
+            endingLineNumber = "1149"
+            landmarkName = "b2World::DrawDebugData()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "b2World::DrawDebugData()"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/cocos2d/external/Box2D/Dynamics/b2World.cpp"
+                  timestampString = "413875740.168533"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1149"
+                  endingLineNumber = "1149"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "b2World::DrawDebugData()"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/cocos2d/external/Box2D/Dynamics/b2World.cpp"
+                  timestampString = "413875740.168951"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1149"
+                  endingLineNumber = "1149"
+                  offsetFromSymbolStart = "864">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/SewerStartLayer.cpp"
+            timestampString = "413886509.617458"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "SewerStartLayer::onTouchesBegan(const std::vector&lt;Touch*&gt;&amp; touches, Event *event)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SewerStartLayer::onTouchesBegan(std::__1::vector&lt;cocos2d::Touch*, std::__1::allocator&lt;cocos2d::Touch*&gt; &gt; const&amp;, cocos2d::Event*)"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/Classes/SewerStartLayer.cpp"
+                  timestampString = "413879057.9127"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SewerStartLayer::onTouchesBegan(std::__1::vector&lt;cocos2d::Touch*, std::__1::allocator&lt;cocos2d::Touch*&gt; &gt; const&amp;, cocos2d::Event*)"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/Classes/SewerStartLayer.cpp"
+                  timestampString = "413879057.912975"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/SewerStartLayer.cpp"
+            timestampString = "413886509.617458"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "SewerStartLayer::onTouchesMoved(const std::vector&lt;Touch*&gt;&amp; touches, Event *event)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SewerStartLayer::onTouchesMoved(std::__1::vector&lt;cocos2d::Touch*, std::__1::allocator&lt;cocos2d::Touch*&gt; &gt; const&amp;, cocos2d::Event*)"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/Classes/SewerStartLayer.cpp"
+                  timestampString = "413879205.66223"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "54">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SewerStartLayer::onTouchesMoved(std::__1::vector&lt;cocos2d::Touch*, std::__1::allocator&lt;cocos2d::Touch*&gt; &gt; const&amp;, cocos2d::Event*)"
+                  moduleName = "parasite-city iOS"
+                  urlString = "file:///Users/xdyou/github/parasite-city/Classes/SewerStartLayer.cpp"
+                  timestampString = "413879205.662662"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
