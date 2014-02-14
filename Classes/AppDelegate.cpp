@@ -51,6 +51,7 @@ void AppDelegate::setResourceSearchResolution()
     paths.push_back("pd_resources/Sprites");
 	paths.push_back("images/hero/idle");
 	paths.push_back("images/hero/run");
+	paths.push_back("images/hero/squat_walk");
 	paths.push_back("images/hero");
     FileUtils::getInstance()->setSearchResolutionsOrder(paths);
 }

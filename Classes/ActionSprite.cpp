@@ -16,6 +16,7 @@ ActionSprite::ActionSprite()
     hurtAction = NULL;
     knockoutAction = NULL;
     attackAction = NULL;
+	squatwalkAction = NULL;
 }
 
 ActionSprite::~ActionSprite()
@@ -40,16 +41,13 @@ void ActionSprite::idle()
 {
     if (changeState(ACTION_STATE_IDLE)) {
         this->runAction(idleAction);
-        velocity = 0;
     }
 }
 
-void ActionSprite::walk(cocos2d::Point direction)
+void ActionSprite::walk()
 {
     if (changeState(ACTION_STATE_WALK)) {
         this->runAction(walkAction);
-        this->direction = direction;
-        this->direction.x > 0?this->setFlippedX(true):this->setFlippedX(false);
     }
 }
 
@@ -62,14 +60,10 @@ void ActionSprite::attack()
     }
 }
 
-void ActionSprite::hurt(int damage)
+void ActionSprite::hurt()
 {
     if (changeState(ACTION_STATE_HURT)) {
         this->runAction(hurtAction);
-        this->hp -= damage;
-        if (this->hp <= 0) {
-            knockout();
-        }
     }
 }
 
@@ -78,6 +72,13 @@ void ActionSprite::knockout()
     if (changeState(ACTION_STATE_KNOCKOUT)) {
         this->runAction(knockoutAction);
     }
+}
+
+void ActionSprite::squatwalk()
+{
+	if(changeState(ACTION_STATE_SQUATWALK)) {
+		this->runAction(squatwalkAction);
+	}
 }
 
 Animation* ActionSprite::createAnimation(const char *fmt, int count, float fps)

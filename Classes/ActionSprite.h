@@ -18,6 +18,7 @@ typedef enum{
     ACTION_STATE_ATTACK,
     ACTION_STATE_HURT,
     ACTION_STATE_KNOCKOUT,
+	ACTION_STATE_SQUATWALK,
 } ActionState;
 
 class ActionSprite:public Sprite
@@ -27,34 +28,24 @@ public:
     ~ActionSprite();
     
     void idle();
-    void walk(Point direction);
+    void walk();
     void attack();
-    void hurt(int damage);
+    void hurt();
     void knockout();
+	void squatwalk();
     
     CC_SYNTHESIZE_RETAIN(Action*, idleAction, IdleAction);
     CC_SYNTHESIZE_RETAIN(Action*, attackAction, AttackAction);
     CC_SYNTHESIZE_RETAIN(Action*, hurtAction, HurtAction);
     CC_SYNTHESIZE_RETAIN(Action*, knockoutAction, KnockoutAction);
     CC_SYNTHESIZE_RETAIN(Action*, walkAction, WalkAction);
+	CC_SYNTHESIZE_RETAIN(Action*, squatwalkAction, SquatwalkAction);
 
-    // 精灵的当前状态
     CC_SYNTHESIZE(ActionState, currentState, ActionState);
-    
-    CC_SYNTHESIZE(float, velocity, Velocity); // 移动速度
-    CC_SYNTHESIZE(Point, direction, Direction); // 移动方向（向量）
-    CC_SYNTHESIZE(unsigned int, hp, HP); // 生命值
-    CC_SYNTHESIZE(unsigned int, atk, ATK); // 攻击力
-    
+
 protected:
-    // 定义一个创建状态动画的方法
-    // fmt   - 状态的图片名格式(查看pd_sprites.plist,每种状态格式都类似hero_idle_xx.png)
-    // count - 状态图片序列的数量
-    // fps   - 动画的播放帧率
     static cocos2d::Animation *createAnimation(const char *fmt, int count, float fps);
     
-    
 private:
-    // 切换演员的当前状态
     bool changeState(ActionState state);
 };

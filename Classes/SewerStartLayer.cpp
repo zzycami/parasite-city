@@ -24,8 +24,9 @@ SewerStartLayer::~SewerStartLayer()
 void SewerStartLayer::initHero()
 {
 	hero = HeroSprite::create();
-	hero->setPosition(Point(80, GroundBottomHeight+80));
-	hero->walk(Point::ZERO);
+	hero->setPosition(Point(80, GroundBottomHeight));
+	//hero->walk();
+	hero->squatwalk();
 	this->addChild(hero);
 }
 
@@ -44,8 +45,8 @@ bool SewerStartLayer::init()
         
         b2BodyDef steelBox1BodyDef;
         steelBox1BodyDef.type = b2_dynamicBody;
-        steelBox1BodyDef.linearDamping = 0.5;// 线速度阻尼
-        steelBox1BodyDef.angularDamping = 0.5;// 角速度阻尼
+        steelBox1BodyDef.linearDamping = 0.5;
+        steelBox1BodyDef.angularDamping = 0.5;
         steelBox1BodyDef.position.Set(steelBox1->getPositionX()/PTM_RATIO, steelBox1->getPositionY()/PTM_RATIO);
         steelBox1BodyDef.userData = steelBox1;
         steelBox1Body = world->CreateBody(&steelBox1BodyDef);
@@ -65,8 +66,8 @@ bool SewerStartLayer::init()
         
         b2BodyDef steelBox2BodyDef;
         steelBox2BodyDef.type = b2_dynamicBody;
-        steelBox2BodyDef.linearDamping = 0.5;// 线速度阻尼
-        steelBox2BodyDef.angularDamping = 0.5;// 角速度阻尼
+        steelBox2BodyDef.linearDamping = 0.5;
+        steelBox2BodyDef.angularDamping = 0.5;
         steelBox2BodyDef.position.Set(steelBox2->getPositionX()/PTM_RATIO, steelBox2->getPositionY()/PTM_RATIO);
         steelBox2BodyDef.userData = steelBox2;
         steelBox2Body = world->CreateBody(&steelBox2BodyDef);
