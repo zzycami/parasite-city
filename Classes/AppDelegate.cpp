@@ -1,7 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
-#include "WelcomeScene.h"
-#include "SewerStartScene.h"
+#include "LoadingScene.h"
 
 USING_NS_CC;
 
@@ -19,6 +17,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto eglView = EGLView::getInstance();
 
     director->setOpenGLView(eglView);
+	eglView->setDesignResolutionSize(1048,629, ResolutionPolicy::SHOW_ALL);
 
 	// set resource load resolution
     setResourceSearchResolution();
@@ -30,10 +29,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = SewerStartScene::create();
-
+    //auto scene = WelcomeScene::create();
+	Vector<String*> filenames = Vector<String*>();
+	for (int  i= 1;  i< 33; i++){
+			char buffer[50] = {0};
+			sprintf(buffer, "lisa_rest%02d.png", i);
+			filenames.pushBack(String::create(buffer));
+	}
+	 LoadingScene *loadingScene = LoadingScene::createWithFilenamesAndNextScene(filenames, NULL);
     // run
-    director->runWithScene(scene);
+	director->runWithScene(loadingScene);
 
     return true;
 }
@@ -41,6 +46,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 void AppDelegate::setResourceSearchResolution()
 {
     std::vector<std::string> paths;
+	paths.push_back("fonts");
     paths.push_back("images");
     paths.push_back("voices");
 	paths.push_back("images/lisa_rest");
