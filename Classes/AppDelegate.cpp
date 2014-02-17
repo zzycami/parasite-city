@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "LoadingScene.h"
+#include "LoadingLayer.h"
 #include "WelcomeScene.h"
 
 using namespace cocos2d;
@@ -31,18 +31,27 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
     
     // create a scene. it's an autorelease object
-    //auto scene = WelcomeScene::create();
+    auto scene = WelcomeScene::create();
 	vector<string> filenames = vector<string>();
 	for (int  i= 1;  i< 33; i++){
 			char buffer[50] = {0};
 			sprintf(buffer, "lisa_rest%02d.png", i);
 			filenames.push_back(buffer);
 	}
-	 LoadingScene *loadingScene = LoadingScene::createWithFilenamesAndNextScene(filenames, NULL);
+	auto loadingScene = Scene::create();
+	auto loadingLayer = LoadingLayer::createWithFilenames(filenames, CC_CALLBACK_0(AppDelegate::startWelcomeScene, this));
+	loadingScene->addChild(loadingLayer);
     // run
 	director->runWithScene(loadingScene);
 
     return true;
+}
+
+void AppDelegate::startWelcomeScene()
+{
+	WelcomeScene *welcomeScene = WelcomeScene::create();
+	TransitionScene *transition = TransitionFade::create(1, welcomeScene);
+	Director::getInstance()->replaceScene(transition);
 }
 
 void AppDelegate::setResourceSearchResolution()

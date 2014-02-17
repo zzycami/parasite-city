@@ -34,6 +34,7 @@ public:
     virtual void applicationWillEnterForeground();
 
 	void setResourceSearchResolution();
+	void startWelcomeScene(void);
 };
 
 #endif // _APP_DELEGATE_H_
