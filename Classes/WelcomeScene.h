@@ -9,6 +9,7 @@ class WelcomeScene:public Scene
 public:
 	WelcomeScene();
 	~WelcomeScene();
+	static vector<resource> getResourceList();
 	CREATE_FUNC(WelcomeScene);
 	virtual bool init();
 private:
