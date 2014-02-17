@@ -17,7 +17,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 				  ../../Classes/SewerStartScene.cpp \
 				  ../../Classes/WelcomeLayer.cpp \
 				  ../../Classes/WelcomeScene.cpp \
-				  ../../Classes/LoadingScene.cpp \
+				  ../../Classes/LoadingLayer.cpp \
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
