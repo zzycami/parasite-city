@@ -1,7 +1,9 @@
 #include "AppDelegate.h"
 #include "LoadingScene.h"
+#include "WelcomeScene.h"
 
-USING_NS_CC;
+using namespace cocos2d;
+using namespace std;
 
 AppDelegate::AppDelegate() {
 
@@ -25,16 +27,16 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // turn on display FPS
     director->setDisplayStats(false);
 
-    // set FPS. the default value is 1.0/60 if you don't call this
+    // set FPS. the default Value* is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-
+    
     // create a scene. it's an autorelease object
     //auto scene = WelcomeScene::create();
-	Vector<String*> filenames = Vector<String*>();
+	vector<string> filenames = vector<string>();
 	for (int  i= 1;  i< 33; i++){
 			char buffer[50] = {0};
 			sprintf(buffer, "lisa_rest%02d.png", i);
-			filenames.pushBack(String::create(buffer));
+			filenames.push_back(buffer);
 	}
 	 LoadingScene *loadingScene = LoadingScene::createWithFilenamesAndNextScene(filenames, NULL);
     // run

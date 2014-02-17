@@ -61,6 +61,8 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
+		5114A83018B1A69300F1491D /* LoadingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5114A82E18B1A69300F1491D /* LoadingScene.cpp */; };
+		5114A83918B1B60900F1491D /* HeroSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5114A83718B1B60900F1491D /* HeroSprite.cpp */; };
 		511F067918AB1BEC00BC8F25 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 511F067818AB1BEC00BC8F25 /* GLES-Render.cpp */; };
 		514E744818A860020052B7B1 /* WelcomeLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514E744418A860020052B7B1 /* WelcomeLayer.cpp */; };
 		514E744918A860020052B7B1 /* WelcomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514E744618A860020052B7B1 /* WelcomeScene.cpp */; };
@@ -381,6 +383,10 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
+		5114A82E18B1A69300F1491D /* LoadingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoadingScene.cpp; path = ../Classes/LoadingScene.cpp; sourceTree = "<group>"; };
+		5114A82F18B1A69300F1491D /* LoadingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingScene.h; path = ../Classes/LoadingScene.h; sourceTree = "<group>"; };
+		5114A83718B1B60900F1491D /* HeroSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HeroSprite.cpp; path = ../Classes/HeroSprite.cpp; sourceTree = "<group>"; };
+		5114A83818B1B60900F1491D /* HeroSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeroSprite.h; path = ../Classes/HeroSprite.h; sourceTree = "<group>"; };
 		511F067118AB1BE100BC8F25 /* GLES-Render.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLES-Render.h"; sourceTree = "<group>"; };
 		511F067818AB1BEC00BC8F25 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "GLES-Render.cpp"; sourceTree = "<group>"; };
 		514E744418A860020052B7B1 /* WelcomeLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WelcomeLayer.cpp; path = ../Classes/WelcomeLayer.cpp; sourceTree = "<group>"; };
@@ -552,6 +558,10 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5114A83718B1B60900F1491D /* HeroSprite.cpp */,
+				5114A83818B1B60900F1491D /* HeroSprite.h */,
+				5114A82E18B1A69300F1491D /* LoadingScene.cpp */,
+				5114A82F18B1A69300F1491D /* LoadingScene.h */,
 				514E744418A860020052B7B1 /* WelcomeLayer.cpp */,
 				514E744518A860020052B7B1 /* WelcomeLayer.h */,
 				514E744618A860020052B7B1 /* WelcomeScene.cpp */,
@@ -1151,6 +1161,8 @@
 				511F067918AB1BEC00BC8F25 /* GLES-Render.cpp in Sources */,
 				516AF3ED18A9DCFA005CC2C8 /* SewerStartLayer.cpp in Sources */,
 				514E744918A860020052B7B1 /* WelcomeScene.cpp in Sources */,
+				5114A83018B1A69300F1491D /* LoadingScene.cpp in Sources */,
+				5114A83918B1B60900F1491D /* HeroSprite.cpp in Sources */,
 				516AF3E918A9CF0A005CC2C8 /* SewerStartScene.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);
