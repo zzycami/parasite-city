@@ -14,6 +14,17 @@ SewerStartLayer::SewerStartLayer()
     steelBox2 = NULL;
 }
 
+void SewerStartLayer::onWalk(Point direction, float distance)
+{
+	this->hero->setFlippedX(direction.x<0?true:false);
+	this->hero->walk();
+	heroVelocity = direction * 5;
+}
+
+void SewerStartLayer::onStop()
+{
+	this->hero->idle();
+}
 
 SewerStartLayer::~SewerStartLayer()
 {
@@ -25,8 +36,7 @@ void SewerStartLayer::initHero()
 {
 	hero = HeroSprite::create();
 	hero->setPosition(Point(80, GroundBottomHeight));
-	hero->walk();
-	//hero->squatwalk();
+	hero->idle();
 	this->addChild(hero);
 }
 
@@ -96,7 +106,7 @@ bool SewerStartLayer::init()
 
 void SewerStartLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *event)
 {
-    if(mouseJoint != NULL){
+    /*if(mouseJoint != NULL){
         return ;
     }
     Touch *touch = touches[0];
@@ -117,30 +127,30 @@ void SewerStartLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *
                 body->SetAwake(true);
             }
         }
-    }
+    }*/
 }
 
 void SewerStartLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event *event)
 {
-    if (mouseJoint == NULL) {
-        return;
-    }
-    Touch *touch = touches[0];
-    Point location = touch->getLocationInView();
-    location = Director::getInstance()->convertToGL(location);
-    //std::printf("location:%f, %f\n", location.x, location.y);
-    b2Vec2 localtionInWorld = b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO);
-    //std::printf("localtionInWorld:%f, %f\n", localtionInWorld.x, localtionInWorld.y);
-    mouseJoint->SetTarget(localtionInWorld);
+    //if (mouseJoint == NULL) {
+    //    return;
+    //}
+    //Touch *touch = touches[0];
+    //Point location = touch->getLocationInView();
+    //location = Director::getInstance()->convertToGL(location);
+    ////std::printf("location:%f, %f\n", location.x, location.y);
+    //b2Vec2 localtionInWorld = b2Vec2(location.x/PTM_RATIO, location.y/PTM_RATIO);
+    ////std::printf("localtionInWorld:%f, %f\n", localtionInWorld.x, localtionInWorld.y);
+    //mouseJoint->SetTarget(localtionInWorld);
 }
 
 void SewerStartLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event *event)
 {
-    if (mouseJoint != NULL) {
+    /*if (mouseJoint != NULL) {
         world->DestroyJoint(mouseJoint);
         mouseJoint = NULL;
         return;
-    }
+    }*/
 }
 
 void SewerStartLayer::tick(float dt)
@@ -156,6 +166,11 @@ void SewerStartLayer::tick(float dt)
             sprite->setRotation(-1 * CC_RADIANS_TO_DEGREES(body->GetAngle()));
         }
     }
+
+	if(hero->getActionState() == ACTION_STATE_WALK){
+		Point nextPosition = Point(hero->getPosition().x + heroVelocity.x, hero->getPosition().y);
+		hero->setPosition(nextPosition);
+	}
 }
 
 void SewerStartLayer::initDebugDraw()

@@ -19,7 +19,7 @@ bool HeroSprite::init()
 		Animation *idle = this->createAnimation("hero_idle%d.png", 4, 3);
 		this->setIdleAction(RepeatForever::create(Animate::create(idle)));
 
-		Animation *walk = this->createAnimation("hero_run%02d.png", 8, 8);
+		Animation *walk = this->createAnimation("hero_run%02d.png", 8, 10);
 		this->setWalkAction(RepeatForever::create(Animate::create(walk)));
 
 		Animation *squatwalk = this->createAnimation("hero_squat_walk%02d.png", 8, 8);

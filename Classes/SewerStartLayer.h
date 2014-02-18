@@ -11,6 +11,7 @@
 #include "Box2D/Box2D.h"
 #include "GLES-Render.h"
 #include "HeroSprite.h"
+#include "OptionLayer.h"
 
 using namespace cocos2d;
 #define PTM_RATIO 32.0
@@ -20,7 +21,7 @@ const Point SteelBox2Position = Point(321, 365);
 const Size SceneSize = Size(1404, 804);
 const int GroundBottomHeight = 25;
 
-class SewerStartLayer:public Layer
+class SewerStartLayer:public Layer, public OptionDelegate
 {
 public:
     SewerStartLayer();
@@ -32,6 +33,9 @@ public:
     void onTouchesBegan(const std::vector<Touch*>& touches, Event *event);
     void onTouchesMoved(const std::vector<Touch*>& touches, Event *event);
     void onTouchesEnded(const std::vector<Touch*>& touches, Event *event);
+
+	void onWalk(Point direction, float distance);
+	void onStop();
     
     b2MouseJoint *mouseJoint;
 private:
@@ -47,6 +51,7 @@ private:
     Sprite *platform2;
     b2Body *platform2Body;
 	ActionSprite *hero;
+	Point heroVelocity;
     
     
     

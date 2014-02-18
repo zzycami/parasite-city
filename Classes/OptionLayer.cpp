@@ -9,6 +9,7 @@
 #include "OptionLayer.h"
 
 
+
 OptionLayer::OptionLayer()
 {}
 
@@ -18,8 +19,8 @@ OptionLayer::~OptionLayer()
 bool OptionLayer::init()
 {
 	if(Layer::init()){
+		//this->delegator = new OptionDelegate();
 		this->initJoystick();
-		setTouchEnabled(true);
 		auto dispatcher = Director::getInstance()->getEventDispatcher();
         auto listener = EventListenerTouchAllAtOnce::create();
         listener->onTouchesBegan = CC_CALLBACK_2(OptionLayer::onTouchesBegan, this);
@@ -74,8 +75,9 @@ void OptionLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *even
 	Size winSize = Director::getInstance()->getWinSize();
 	for (auto touch : touches){
 		Point position = touch->getLocation();
-        // left
+        
         if (position.x <= winSize.width / 2) {
+			// left
 			this->activeJoystick(position);
         } else {
             // right
@@ -96,10 +98,13 @@ void OptionLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event *even
     float distance = start.getDistance(p);
     Point direction = (p - start).normalize();
 	this->updateJoystick(direction, distance);
+
+	this->delegator->onWalk(direction, distance);
 }
 
 void OptionLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event *event)
 {
 	this->inactiveJoystick();
+	this->delegator->onStop();
 }
 

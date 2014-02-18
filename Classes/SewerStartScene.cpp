@@ -59,6 +59,7 @@ bool SewerStartScene::init()
 
 		auto optionLayer = OptionLayer::create();
 		if(optionLayer) {
+			optionLayer->setDelegator(sewerStartLayer);
 			this->addChild(optionLayer);
 		}
         
