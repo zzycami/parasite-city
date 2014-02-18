@@ -26,6 +26,7 @@ public:
 	virtual bool initWithFilenames(vector<resource> resources, std::function<void(void)> complete);
 	static LoadingLayer* createWithFilenames(vector<resource> resources, std::function<void(void)> complete);
 	void loadingCallBack(Texture2D *texture);
+    static void addConsequentTextures(const char *fmt, int count, vector<resource> &resources);
 
 private:
 	int totalNum;

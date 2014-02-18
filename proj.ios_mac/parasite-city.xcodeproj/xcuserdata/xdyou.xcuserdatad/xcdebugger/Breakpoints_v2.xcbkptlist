@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
             endingLineNumber = "175"
-            landmarkName = "WelcomeLayer::initVolumeSlider()"
+            landmarkName = "WelcomeLayer::menuItemSelectedAnimate(Object *sender)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -93,7 +93,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
             endingLineNumber = "164"
-            landmarkName = "SewerStartLayer::draw()"
+            landmarkName = "SewerStartLayer::initDebugDraw()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -155,7 +155,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "SewerStartLayer::onTouchesBegan(const std::vector&lt;Touch*&gt;&amp; touches, Event *event)"
+            landmarkName = "SewerStartLayer::init()"
             landmarkType = "5">
             <Locations>
                <Location
@@ -201,7 +201,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "SewerStartLayer::onTouchesMoved(const std::vector&lt;Touch*&gt;&amp; touches, Event *event)"
+            landmarkName = "SewerStartLayer::onTouchesBegan(const std::vector&lt;Touch*&gt;&amp; touches, Event *event)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -247,7 +247,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "216"
             endingLineNumber = "216"
-            landmarkName = "SewerStartLayer::initStaticObjects()"
+            landmarkName = "SewerStartLayer::initBox2d()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

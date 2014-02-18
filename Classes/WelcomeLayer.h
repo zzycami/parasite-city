@@ -37,6 +37,7 @@ public:
     void menuExitCallBack();
     void menuOmakeCallBack();
     void menuGalleryCallBack();
+    void startNextScene();
 private:
     void initMenu();
     ControlSlider* initVolumeSlider();

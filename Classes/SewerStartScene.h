@@ -9,6 +9,7 @@
 #pragma once
 #include "cocos2d.h"
 #include "SewerStartLayer.h"
+#include "LoadingLayer.h"
 
 using namespace cocos2d;
 
@@ -17,6 +18,7 @@ class SewerStartScene: public Scene
 public:
     SewerStartScene();
     ~SewerStartScene();
+    static vector<resource> getResourceList();
     virtual bool init();
     CREATE_FUNC(SewerStartScene);
     

@@ -14,6 +14,24 @@ SewerStartScene::SewerStartScene()
 SewerStartScene::~SewerStartScene()
 {}
 
+vector<resource> SewerStartScene::getResourceList()
+{
+    resource res;
+	vector<resource> resources = vector<resource>();
+    LoadingLayer::addConsequentTextures("hero_idle%d.png", 4, resources);
+    LoadingLayer::addConsequentTextures("hero_run%02d.png", 8, resources);
+    LoadingLayer::addConsequentTextures("hero_squat_walk%02d.png", 8, resources);
+    
+    res.type = RESOURCE_TYPE_IMAGE;
+    res.filename = "scene1_background.png";
+    resources.push_back(res);
+    
+    res.type = RESOURCE_TYPE_IMAGE;
+    res.filename = "steel_box.png";
+    resources.push_back(res);
+	return resources;
+}
+
 bool SewerStartScene::init()
 {
     if (Scene::init()) {

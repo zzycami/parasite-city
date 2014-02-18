@@ -237,6 +237,14 @@ void WelcomeLayer::menuGalleryCallBack()
 
 void WelcomeLayer::menuNewGameCallBack()
 {
+    auto loadingScene = Scene::create();
+	auto loadingLayer = LoadingLayer::createWithFilenames(SewerStartScene::getResourceList(), CC_CALLBACK_0(WelcomeLayer::startNextScene, this));
+	loadingScene->addChild(loadingLayer);
+    Director::getInstance()->runWithScene(loadingScene);
+}
+
+void WelcomeLayer::startNextScene()
+{
     auto *sewerStartScene = SewerStartScene::create();
     TransitionScene *transition = TransitionFade::create(1, sewerStartScene);
     Director::getInstance()->replaceScene(transition);

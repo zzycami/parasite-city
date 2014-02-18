@@ -12,10 +12,19 @@ LoadingLayer::~LoadingLayer()
 	this->resources.clear();
 }
 
+void LoadingLayer::addConsequentTextures(const char *fmt, int count, vector<resource> &resources)
+{
+    for (int i = 0; i < count; i++){
+		const char *filename = String::createWithFormat(fmt, i)->getCString();
+        resource res;
+        res.type = RESOURCE_TYPE_IMAGE;
+        res.filename = filename;
+		resources.push_back(res);
+	}
+}
+
 void LoadingLayer::initLoadingProgress()
 {
-	Size visibleSize = Director::getInstance()->getVisibleSize();
-	Point origin = Director::getInstance()->getVisibleOrigin();
 	Sprite *loadingBackground = Sprite::create("loading_bg.png");
 	loadingBackground->setAnchorPoint(Point::ZERO);
 	loadingBackground->setPosition(73, 19);
