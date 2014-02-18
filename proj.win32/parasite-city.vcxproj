@@ -139,6 +139,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\HeroSprite.cpp" />
     <ClCompile Include="..\Classes\LoadingLayer.cpp" />
+    <ClCompile Include="..\Classes\OptionLayer.cpp" />
     <ClCompile Include="..\Classes\PhysicalSprite.cpp" />
     <ClCompile Include="..\Classes\SewerStartLayer.cpp" />
     <ClCompile Include="..\Classes\SewerStartScene.cpp" />
@@ -155,6 +156,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\HeroSprite.h" />
     <ClInclude Include="..\Classes\LoadingLayer.h" />
+    <ClInclude Include="..\Classes\OptionLayer.h" />
     <ClInclude Include="..\Classes\PhysicalSprite.h" />
     <ClInclude Include="..\Classes\SewerStartLayer.h" />
     <ClInclude Include="..\Classes\SewerStartScene.h" />

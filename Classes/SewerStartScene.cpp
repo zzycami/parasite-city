@@ -7,6 +7,7 @@
 //
 
 #include "SewerStartScene.h"
+#include "OptionLayer.h"
 
 SewerStartScene::SewerStartScene()
 {}
@@ -29,6 +30,14 @@ vector<resource> SewerStartScene::getResourceList()
     res.type = RESOURCE_TYPE_IMAGE;
     res.filename = "steel_box.png";
     resources.push_back(res);
+
+	res.type = RESOURCE_TYPE_IMAGE;
+	res.filename = "joystick.png";
+	resources.push_back(res);
+
+	res.type = RESOURCE_TYPE_IMAGE;
+	res.filename = "joystick_bg.png";
+	resources.push_back(res);
 	return resources;
 }
 
@@ -47,6 +56,11 @@ bool SewerStartScene::init()
         if (sewerStartLayer) {
             this->addChild(sewerStartLayer);
         }
+
+		auto optionLayer = OptionLayer::create();
+		if(optionLayer) {
+			this->addChild(optionLayer);
+		}
         
         auto dispatcher = Director::getInstance()->getEventDispatcher();
         auto listener = EventListenerTouchAllAtOnce::create();

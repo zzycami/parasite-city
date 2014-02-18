@@ -184,6 +184,9 @@ void WelcomeLayer::volumeChange(Object *sender, Control::EventType eventType)
 
 void WelcomeLayer::onEnter()
 {
+	//SimpleAudioEngine::getInstance()->preloadEffect("00104.wav");
+	//SimpleAudioEngine::getInstance()->preloadEffect("00258.wav");
+
     Layer::onEnter();
 	// add background
 	//Sprite *background = Sprite::createWithSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("lisa_rest00.png"));
@@ -240,12 +243,12 @@ void WelcomeLayer::menuNewGameCallBack()
     auto loadingScene = Scene::create();
 	auto loadingLayer = LoadingLayer::createWithFilenames(SewerStartScene::getResourceList(), CC_CALLBACK_0(WelcomeLayer::startNextScene, this));
 	loadingScene->addChild(loadingLayer);
-    Director::getInstance()->runWithScene(loadingScene);
+    Director::getInstance()->replaceScene(loadingScene);
 }
 
 void WelcomeLayer::startNextScene()
 {
-    auto *sewerStartScene = SewerStartScene::create();
+    auto sewerStartScene = SewerStartScene::create();
     TransitionScene *transition = TransitionFade::create(1, sewerStartScene);
     Director::getInstance()->replaceScene(transition);
 }

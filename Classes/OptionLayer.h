@@ -10,6 +10,9 @@
 #include "cocos2d.h"
 using namespace cocos2d;
 
+const int JoystickBgRadius = 64;
+const int JoystickRadius = 32;
+
 class OptionDelegate
 {
 public:
@@ -40,4 +43,5 @@ private:
     void activeJoystick(Point position);
     void inactiveJoystick();
     void updateJoystick(Point direction, float distance);
+	void initJoystick();
 };
