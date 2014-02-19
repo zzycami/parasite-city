@@ -22,6 +22,7 @@ vector<resource> SewerStartScene::getResourceList()
     LoadingLayer::addConsequentTextures("hero_idle%d.png", 4, resources);
     LoadingLayer::addConsequentTextures("hero_run%02d.png", 8, resources);
     LoadingLayer::addConsequentTextures("hero_squat_walk%02d.png", 8, resources);
+	LoadingLayer::addConsequentTextures("hero_push%02d.png", 10, resources);
     
     res.type = RESOURCE_TYPE_IMAGE;
     res.filename = "scene1_background.png";

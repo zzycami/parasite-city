@@ -25,6 +25,9 @@ bool HeroSprite::init()
 		Animation *squatwalk = this->createAnimation("hero_squat_walk%02d.png", 8, 8);
 		this->setSquatwalkAction(RepeatForever::create(Animate::create(squatwalk)));
 
+		Animation *push = this->createAnimation("hero_push%02d.png",10, 5);
+		this->setPushAction(RepeatForever::create(Animate::create(push)));
+
 		return true;
 	}else {
 		return false;

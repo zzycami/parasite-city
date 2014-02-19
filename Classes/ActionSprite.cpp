@@ -17,6 +17,7 @@ ActionSprite::ActionSprite()
     knockoutAction = NULL;
     attackAction = NULL;
 	squatwalkAction = NULL;
+	pushAction = NULL;
 }
 
 ActionSprite::~ActionSprite()
@@ -42,6 +43,13 @@ void ActionSprite::idle()
     if (changeState(ACTION_STATE_IDLE)) {
         this->runAction(idleAction);
     }
+}
+
+void ActionSprite::push()
+{
+	if(changeState(ACTION_STATE_PUSH)) {
+		this->runAction(pushAction);
+	}
 }
 
 void ActionSprite::walk()

@@ -36,7 +36,8 @@ void SewerStartLayer::initHero()
 {
 	hero = HeroSprite::create();
 	hero->setPosition(Point(80, GroundBottomHeight));
-	hero->idle();
+	//hero->idle();
+	hero->push();
 	this->addChild(hero);
 }
 

@@ -19,6 +19,7 @@ typedef enum{
     ACTION_STATE_HURT,
     ACTION_STATE_KNOCKOUT,
 	ACTION_STATE_SQUATWALK,
+	ACTION_STATE_PUSH,
 } ActionState;
 
 class ActionSprite:public Sprite
@@ -33,12 +34,14 @@ public:
     void hurt();
     void knockout();
 	void squatwalk();
+	void push();
     
     CC_SYNTHESIZE_RETAIN(Action*, idleAction, IdleAction);
     CC_SYNTHESIZE_RETAIN(Action*, attackAction, AttackAction);
     CC_SYNTHESIZE_RETAIN(Action*, hurtAction, HurtAction);
     CC_SYNTHESIZE_RETAIN(Action*, knockoutAction, KnockoutAction);
     CC_SYNTHESIZE_RETAIN(Action*, walkAction, WalkAction);
+	CC_SYNTHESIZE_RETAIN(Action*, pushAction, PushAction);
 	CC_SYNTHESIZE_RETAIN(Action*, squatwalkAction, SquatwalkAction);
 
     CC_SYNTHESIZE(ActionState, currentState, ActionState);
