@@ -44,7 +44,8 @@ vector<resource> SewerStartScene::getResourceList()
 
 bool SewerStartScene::init()
 {
-    if (Scene::init()) {
+	if (Scene::initWithPhysics()) {
+		this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
         backgroundLayer = Layer::create();
         if (backgroundLayer) {
             Sprite *background = Sprite::create("scene1_background.png");
@@ -55,6 +56,7 @@ bool SewerStartScene::init()
         }
         sewerStartLayer = SewerStartLayer::create();
         if (sewerStartLayer) {
+			sewerStartLayer->setPhyWorld(this->getPhysicsWorld());
             this->addChild(sewerStartLayer);
         }
 
