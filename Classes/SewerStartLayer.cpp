@@ -18,12 +18,14 @@ void SewerStartLayer::onWalk(Point direction, float distance)
 {
 	this->hero->setFlippedX(direction.x<0?true:false);
 	this->hero->walk();
-	heroVelocity = direction * 5;
+	heroVelocity = direction.x<0?-5:5;
+	heroBody->SetLinearVelocity(b2Vec2(heroVelocity, 0));
 }
 
 void SewerStartLayer::onStop()
 {
 	this->hero->idle();
+	heroBody->SetLinearVelocity(b2Vec2_zero);
 }
 
 SewerStartLayer::~SewerStartLayer()
@@ -35,10 +37,26 @@ SewerStartLayer::~SewerStartLayer()
 void SewerStartLayer::initHero()
 {
 	hero = HeroSprite::create();
-	hero->setPosition(Point(80, GroundBottomHeight));
-	//hero->idle();
-	hero->push();
+	hero->setPosition(Point(80, GroundBottomHeight + 200));
+	hero->idle();
 	this->addChild(hero);
+
+	b2BodyDef heroBodyDef;
+	heroBodyDef.type = b2_dynamicBody;
+	heroBodyDef.position.Set(hero->getPositionX()/PTM_RATIO, hero->getPositionY()/PTM_RATIO);
+	heroBodyDef.userData = hero;
+	heroBody = world->CreateBody(&heroBodyDef);
+	heroBody->SetFixedRotation(true);
+	heroBody->SetBullet(true);
+
+	b2FixtureDef heroFextrureDef;
+    b2PolygonShape boxShape;
+    Size boxSize = hero->getContentSize();
+    boxShape.SetAsBox(boxSize.width/PTM_RATIO/2, boxSize.height/PTM_RATIO/2);
+    heroFextrureDef.shape = &boxShape;
+    heroFextrureDef.density = 1.0f;
+    heroFextrureDef.friction = 0.0f;
+    heroBody->CreateFixture(&heroFextrureDef);
 }
 
 bool SewerStartLayer::init()
@@ -168,10 +186,10 @@ void SewerStartLayer::tick(float dt)
         }
     }
 
-	if(hero->getActionState() == ACTION_STATE_WALK){
+	/*if(hero->getActionState() == ACTION_STATE_WALK){
 		Point nextPosition = Point(hero->getPosition().x + heroVelocity.x, hero->getPosition().y);
 		hero->setPosition(nextPosition);
-	}
+	}*/
 }
 
 void SewerStartLayer::initDebugDraw()
@@ -179,10 +197,10 @@ void SewerStartLayer::initDebugDraw()
     debugDraw = new GLESDebugDraw(PTM_RATIO);
     uint32 flags = 0;
     flags += b2Draw::e_shapeBit;
-    flags += b2Draw::e_jointBit;
+    /*flags += b2Draw::e_jointBit;
     flags += b2Draw::e_aabbBit;
     flags += b2Draw::e_centerOfMassBit;
-    flags += b2Draw::e_pairBit;
+    flags += b2Draw::e_pairBit;*/
     debugDraw->SetFlags(flags);
     world->SetDebugDraw(debugDraw);
 }

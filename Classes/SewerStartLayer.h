@@ -8,13 +8,12 @@
 
 #pragma once
 #include "cocos2d.h"
-#include "Box2D/Box2D.h"
 #include "GLES-Render.h"
 #include "HeroSprite.h"
 #include "OptionLayer.h"
+#include "Common.h"
 
 using namespace cocos2d;
-#define PTM_RATIO 32.0
 
 const Point SteelBox1Position = Point(211, 26);
 const Point SteelBox2Position = Point(321, 365);
@@ -51,7 +50,8 @@ private:
     Sprite *platform2;
     b2Body *platform2Body;
 	ActionSprite *hero;
-	Point heroVelocity;
+	b2Body *heroBody;
+	int heroVelocity;
     
     
     

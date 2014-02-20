@@ -14,7 +14,7 @@ HeroSprite::~HeroSprite(void)
 bool HeroSprite::init()
 {
 	if(ActionSprite::initWithFile("hero_idle0.png")){
-		this->setAnchorPoint(Point(0.5, 0));
+		//this->setAnchorPoint(Point(0.5, 0));
 
 		Animation *idle = this->createAnimation("hero_idle%d.png", 4, 3);
 		this->setIdleAction(RepeatForever::create(Animate::create(idle)));
