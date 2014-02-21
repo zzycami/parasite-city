@@ -19,10 +19,8 @@ const Point SteelBox2Position = Point(321, 365);
 const Size SceneSize = Size(1404, 804);
 const int GroundBottomHeight = 25;
 
-const int Platform1Tag = 100;
-const int Platform2Tag = 101;
-const int SteelBox1Tag = 102;
-const int SteelBox2Tag = 103;
+const int PlatformTag = 100;
+const int SteelBoxTag = 102;
 const int HeroTag = 104;
 
 class SewerStartLayer:public Layer, public OptionDelegate
@@ -37,6 +35,7 @@ public:
 	void onStop();
     
 	void setPhyWorld(PhysicsWorld* world){this->world = world;}
+
 private:
     Sprite *steelBox1;
     Sprite *steelBox2;
