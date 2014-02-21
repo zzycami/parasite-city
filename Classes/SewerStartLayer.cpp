@@ -20,6 +20,8 @@ void SewerStartLayer::onWalk(Point direction, float distance)
 	this->hero->walk();
 	heroVelocity = direction.x<0?-150:150;
 	this->hero->getPhysicsBody()->setVelocity(Vect(heroVelocity, 0));
+    this->hero->getPhysicsBody()->removeAllShapes();
+    this->hero->getPhysicsBody()->addShape(PhysicsShapePolygon);
 }
 
 void SewerStartLayer::onStop()
@@ -37,8 +39,10 @@ void SewerStartLayer::initHero()
 	hero = HeroSprite::create();
 	hero->setPosition(Point(200, hero->getContentSize().height/2));
 	hero->idle();
-	auto heroBody = PhysicsBody::createBox(hero->getContentSize(), PhysicsMaterial(100.0f, 0.3f, 0.0f), Point::ZERO);
+
+    auto heroBody = PhysicsBody::createPolygon(IdlePoints, 12, HeroPhysicsMaterial, Point::ZERO);
 	heroBody->setDynamic(true);
+    heroBody->setRotationEnable(false);
 	hero->setPhysicsBody(heroBody);
 	this->addChild(hero);
 }
