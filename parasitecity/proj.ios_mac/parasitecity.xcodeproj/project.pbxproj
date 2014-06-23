@@ -122,6 +122,10 @@
 		514F7C781952EB5A00B80F2E /* HeroCharacter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 514F7C761952EB5A00B80F2E /* HeroCharacter.cpp */; };
 		516FA9C41953E573002BB23F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 516FA9C31953E573002BB23F /* GameScene.cpp */; };
 		516FA9C51953E573002BB23F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 516FA9C31953E573002BB23F /* GameScene.cpp */; };
+		51AF14141958140700AA9D9D /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51AF14121958140700AA9D9D /* OptionLayer.cpp */; };
+		51AF14151958140700AA9D9D /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51AF14121958140700AA9D9D /* OptionLayer.cpp */; };
+		51AF141A195818D400AA9D9D /* pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AF1419195818D400AA9D9D /* pad.png */; };
+		51AF141B195818D400AA9D9D /* pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AF1419195818D400AA9D9D /* pad.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -353,6 +357,9 @@
 		514F7C761952EB5A00B80F2E /* HeroCharacter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HeroCharacter.cpp; path = ../Classes/HeroCharacter.cpp; sourceTree = "<group>"; };
 		516FA9C01953E562002BB23F /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
 		516FA9C31953E573002BB23F /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
+		51AF14121958140700AA9D9D /* OptionLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionLayer.cpp; sourceTree = "<group>"; };
+		51AF14131958140700AA9D9D /* OptionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionLayer.h; sourceTree = "<group>"; };
+		51AF1419195818D400AA9D9D /* pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -644,6 +651,8 @@
 		514F7C6E1952E21A00B80F2E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				51AF14121958140700AA9D9D /* OptionLayer.cpp */,
+				51AF14131958140700AA9D9D /* OptionLayer.h */,
 				516FA9C01953E562002BB23F /* GameScene.h */,
 				516FA9C31953E573002BB23F /* GameScene.cpp */,
 			);
@@ -664,9 +673,18 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		51AF14181958186700AA9D9D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				51AF1419195818D400AA9D9D /* pad.png */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				51AF14181958186700AA9D9D /* UI */,
 				514F7C0D1952E19400B80F2E /* TextureAtlases */,
 			);
 			name = Resources;
@@ -726,10 +744,10 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = 5ZT64D7ZTC;
 					};
 				};
 			};
@@ -849,6 +867,7 @@
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				514F7C591952E19400B80F2E /* hero_run06.png in Resources */,
+				51AF141A195818D400AA9D9D /* pad.png in Resources */,
 				514F7C611952E19400B80F2E /* hero_squat_walk02.png in Resources */,
 				514F7C3B1952E19400B80F2E /* hero_push01.png in Resources */,
 				514F7C351952E19400B80F2E /* hero_idle2.png in Resources */,
@@ -905,6 +924,7 @@
 				514F7C461952E19400B80F2E /* hero_push06.png in Resources */,
 				514F7C361952E19400B80F2E /* hero_idle2.png in Resources */,
 				514F7C541952E19400B80F2E /* hero_run03.png in Resources */,
+				51AF141B195818D400AA9D9D /* pad.png in Resources */,
 				514F7C681952E19400B80F2E /* hero_squat_walk05.png in Resources */,
 				514F7C441952E19400B80F2E /* hero_push05.png in Resources */,
 				514F7C401952E19400B80F2E /* hero_push03.png in Resources */,
@@ -937,6 +957,7 @@
 				514F7C771952EB5A00B80F2E /* HeroCharacter.cpp in Sources */,
 				514F7C731952E59F00B80F2E /* Character.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				51AF14141958140700AA9D9D /* OptionLayer.cpp in Sources */,
 				516FA9C41953E573002BB23F /* GameScene.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);
@@ -952,6 +973,7 @@
 				514F7C741952E59F00B80F2E /* Character.cpp in Sources */,
 				516FA9C51953E573002BB23F /* GameScene.cpp in Sources */,
 				514F7C781952EB5A00B80F2E /* HeroCharacter.cpp in Sources */,
+				51AF14151958140700AA9D9D /* OptionLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,9 +1097,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1104,9 +1126,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac/Prefix.pch;

@@ -22,11 +22,6 @@ Scene* HelloWorld::createScene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-    
-    auto hero = HeroCharacter::create();
-    hero->setPosition(100, 100);
-    hero->push();
-    this->addChild(hero);
     return true;
 }
 

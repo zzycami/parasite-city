@@ -8,6 +8,20 @@
 
 #include "HeroCharacter.h"
 
+HeroCharacter*  HeroCharacter::sharedHeroSprite = nullptr;
+
+HeroCharacter* HeroCharacter::getInstance() {
+    if (sharedHeroSprite == nullptr) {
+        sharedHeroSprite = new HeroCharacter();
+        if (!sharedHeroSprite->init()) {
+            delete sharedHeroSprite;
+            sharedHeroSprite = NULL;
+            CCLOG("ERROR: Could not init sharedHeroSprite");
+        }
+    }
+    return sharedHeroSprite;
+}
+
 HeroCharacter::HeroCharacter() {
 }
 
@@ -27,6 +41,8 @@ bool HeroCharacter::init() {
         
 		Animation *push = this->createAnimation("hero_push%02d.png",10, 5);
 		this->setPushAction(RepeatForever::create(Animate::create(push)));
+        
+        this->setCurrentDirection(DIRECTION_LEFT);
         return true;
     }else {
         return false;
@@ -38,4 +54,43 @@ void HeroCharacter::configurePhysicsBody() {
 	heroBody->setDynamic(true);
     heroBody->setRotationEnable(false);
 	this->setPhysicsBody(heroBody);
+}
+
+void HeroCharacter::idle(Direction direction) {
+    Character::idle(direction);
+}
+
+
+void HeroCharacter::walk(Direction direction) {
+    Character::walk(direction);
+    if (this->getCurrentDirection() != direction) {
+        this->setFlippedX(false);
+    }else {
+        this->setFlippedX(true);
+    }
+}
+
+
+void HeroCharacter::attack(Direction direction) {
+    Character::attack(direction);
+}
+
+
+void HeroCharacter::hurt() {
+    Character::hurt();
+}
+
+
+void HeroCharacter::knockout() {
+    Character::knockout();
+}
+
+
+void HeroCharacter::squatwalk(Direction direction) {
+    Character::squatwalk(direction);
+}
+
+
+void HeroCharacter::push(Direction direction) {
+    Character::push(direction);
 }

@@ -8,9 +8,12 @@
 
 #pragma once
 #include "cocos2d.h"
+#include "OptionLayer.h"
 
 using namespace std;
 using namespace cocos2d;
+
+
 
 /**
  The Character state, include the hero and Enemy
@@ -31,13 +34,13 @@ public:
     ~Character();
     
     // Orientation, Movement, and Attacking.
-    void idle();
-    void walk();
-    void attack();
+    void idle(Direction direction);
+    void walk(Direction direction);
+    void attack(Direction direction);
     void hurt();
     void knockout();
-	void squatwalk();
-	void push();
+	void squatwalk(Direction direction);
+	void push(Direction direction);
     
     // Physical
     void configurePhysicsBody();

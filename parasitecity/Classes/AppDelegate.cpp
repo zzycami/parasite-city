@@ -20,6 +20,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
         glview = GLView::create("Parasite City");
         director->setOpenGLView(glview);
     }
+    glview->setDesignResolutionSize(1086, 629, ResolutionPolicy::FIXED_WIDTH);
 
     // turn on display FPS
     director->setDisplayStats(true);

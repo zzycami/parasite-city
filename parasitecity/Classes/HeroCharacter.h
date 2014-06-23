@@ -19,8 +19,21 @@ public:
     ~HeroCharacter();
     
     virtual bool init();
-    CREATE_FUNC(HeroCharacter);
     
     // Override
     void configurePhysicsBody();
+    void idle(Direction direction);
+    void walk(Direction direction);
+    void attack(Direction direction);
+    void hurt();
+    void knockout();
+    void squatwalk(Direction direction);
+    void push(Direction direction);
+    
+    // single instance
+    static HeroCharacter* getInstance();
+    CC_SYNTHESIZE(Direction, currentDirection, CurrentDirection);
+    
+private:
+    static HeroCharacter* sharedHeroSprite;
 };

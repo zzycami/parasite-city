@@ -46,21 +46,21 @@ bool Character::changeState(ActionState state)
     return true;
 }
 
-void Character::idle()
+void Character::idle(Direction direction)
 {
     if (changeState(ACTION_STATE_IDLE)) {
         this->runAction(idleAction);
     }
 }
 
-void Character::push()
+void Character::push(Direction direction)
 {
 	if(changeState(ACTION_STATE_PUSH)) {
 		this->runAction(pushAction);
 	}
 }
 
-void Character::walk()
+void Character::walk(Direction direction)
 {
     if (changeState(ACTION_STATE_WALK)) {
         this->runAction(walkAction);
@@ -68,7 +68,7 @@ void Character::walk()
 }
 
 
-void Character::attack()
+void Character::attack(Direction direction)
 {
     if (changeState(ACTION_STATE_ATTACK)) {
         this->runAction(attackAction);
@@ -89,7 +89,7 @@ void Character::knockout()
     }
 }
 
-void Character::squatwalk()
+void Character::squatwalk(Direction direction)
 {
 	if(changeState(ACTION_STATE_SQUATWALK)) {
 		this->runAction(squatwalkAction);
