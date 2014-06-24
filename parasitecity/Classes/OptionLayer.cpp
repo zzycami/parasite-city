@@ -35,17 +35,10 @@ void OptionLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *even
 	for (auto touch : touches){
 		Point position = touch->getLocation();
         auto deltaAngle = this->delegator->getReferencePoint() - position;
-        auto angle = CC_RADIANS_TO_DEGREES(deltaAngle.getAngle());
-        if ((angle > -180 && angle < -135) || (angle > 135 && angle <= 180)) {
+        if (deltaAngle.x < 0) {
             this->delegator->onWalk(Direction::DIRECTION_RIGHT);
-        }else if(angle >= -135 && angle <= -45) {
-            this->delegator->onWalk(Direction::DIRECTION_UP);
-            this->delegator->onJump();
-        }else if(angle > -45 && angle <= 45) {
+        }else {
             this->delegator->onWalk(Direction::DIRECTION_LEFT);
-        }else if(angle > 45 && angle <= 135) {
-            this->delegator->onWalk(Direction::DIRECTION_DOWN);
-            this->delegator->onSquat();
         }
     }
 }

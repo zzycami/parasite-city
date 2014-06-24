@@ -15,9 +15,9 @@ const int JoystickRadius = 32;
 
 typedef enum _direction {
     DIRECTION_UP = 0,
-    DIRECTION_DOWN,
-    DIRECTION_LEFT,
-    DIRECTION_RIGHT
+    DIRECTION_DOWN = 1,
+    DIRECTION_LEFT = 2,
+    DIRECTION_RIGHT = 3
 } Direction;
 
 class OptionDelegate {

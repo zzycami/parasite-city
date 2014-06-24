@@ -42,7 +42,10 @@ bool HeroCharacter::init() {
 		Animation *push = this->createAnimation("hero_push%02d.png",10, 5);
 		this->setPushAction(RepeatForever::create(Animate::create(push)));
         
-        this->setCurrentDirection(DIRECTION_LEFT);
+        this->setCurrentDirection(DIRECTION_RIGHT);
+        this->walkSpeed = 300;
+        
+        this->scheduleUpdate();
         return true;
     }else {
         return false;
@@ -63,11 +66,13 @@ void HeroCharacter::idle(Direction direction) {
 
 void HeroCharacter::walk(Direction direction) {
     Character::walk(direction);
-    if (this->getCurrentDirection() != direction) {
+    if (direction == DIRECTION_RIGHT) {
         this->setFlippedX(false);
     }else {
+        // If current direction is not the right direction, change it
         this->setFlippedX(true);
     }
+    this->setCurrentDirection(direction);
 }
 
 
@@ -94,3 +99,12 @@ void HeroCharacter::squatwalk(Direction direction) {
 void HeroCharacter::push(Direction direction) {
     Character::push(direction);
 }
+
+void HeroCharacter::update(float dt) {
+    if (this->getActionState() == ACTION_STATE_WALK) {
+        auto deltaDistance = (this->getCurrentDirection() == DIRECTION_LEFT?-1:1)*this->walkSpeed*dt;
+        auto detalVect = Point(this->getPositionX() + deltaDistance, this->getPositionY());
+        this->setPosition(detalVect);
+    }
+}
+

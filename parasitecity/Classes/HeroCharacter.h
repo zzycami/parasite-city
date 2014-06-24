@@ -29,6 +29,7 @@ public:
     void knockout();
     void squatwalk(Direction direction);
     void push(Direction direction);
+    void update(float dt);
     
     // single instance
     static HeroCharacter* getInstance();
@@ -36,4 +37,5 @@ public:
     
 private:
     static HeroCharacter* sharedHeroSprite;
+    float walkSpeed;
 };
