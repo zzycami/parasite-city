@@ -53,7 +53,7 @@ void Character::idle(Direction direction)
     }
 }
 
-void Character::push(Direction direction)
+void Character::push(Sprite* target)
 {
 	if(changeState(ACTION_STATE_PUSH)) {
 		this->runAction(pushAction);

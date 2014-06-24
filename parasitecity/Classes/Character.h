@@ -18,7 +18,7 @@ using namespace cocos2d;
 /**
  The Character state, include the hero and Enemy
  */
-typedef enum{
+typedef enum : int{
     ACTION_STATE_IDLE = 0, // The default state
     ACTION_STATE_WALK, // The character move
     ACTION_STATE_ATTACK, // The character attack
@@ -27,6 +27,20 @@ typedef enum{
 	ACTION_STATE_SQUATWALK, // The character is squat walk
 	ACTION_STATE_PUSH //The character is pushing
 } ActionState;
+
+/* Bitmask for the different entities with physics bodies. */
+typedef enum : uint8_t {
+    ColliderTypeHero             = 0x1,
+    ColliderTypeGoblinOrBoss     = 0x1<<1,
+    ColliderTypeBox              = 0x1<<2,
+    ColliderTypeWall             = 0x1<<3,
+    ColliderTypeCave             = 0x1<<4
+} ColliderType;
+
+typedef enum : int {
+    TagBox = 1,
+    TagHero = 2
+}Tag;
 
 class Character:public Sprite {
 public:
@@ -40,7 +54,7 @@ public:
     void hurt();
     void knockout();
 	void squatwalk(Direction direction);
-	void push(Direction direction);
+	void push(Sprite* target);
     
     // Physical
     void configurePhysicsBody();

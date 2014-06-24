@@ -56,15 +56,32 @@ void HeroCharacter::configurePhysicsBody() {
     auto heroBody = PhysicsBody::createBox(this->getContentSize());
 	heroBody->setDynamic(true);
     heroBody->setRotationEnable(false);
+    heroBody->setCategoryBitmask(ColliderTypeHero);
+    heroBody->setCollisionBitmask(ColliderTypeWall | ColliderTypeBox);
+    heroBody->setContactTestBitmask(ColliderTypeBox);
+    heroBody->setDynamic(false);
+    this->setTag(Tag::TagHero);
 	this->setPhysicsBody(heroBody);
 }
 
 void HeroCharacter::idle(Direction direction) {
+    if(this->getActionState() == ACTION_STATE_PUSH) {
+        // if hero is push state, when the user stop walk, stop the push animation
+        //this->getPushAction()->stop();
+        return;
+    }
     Character::idle(direction);
 }
 
 
 void HeroCharacter::walk(Direction direction) {
+    if (this->getActionState() == ACTION_STATE_PUSH) {
+        // if the next directon is not the push direction, change to walk state
+        if (this->getCurrentDirection() == direction) {
+            //this->getPushAction()->startWithTarget(this);
+            return;
+        }
+    }
     Character::walk(direction);
     if (direction == DIRECTION_RIGHT) {
         this->setFlippedX(false);
@@ -96,8 +113,21 @@ void HeroCharacter::squatwalk(Direction direction) {
 }
 
 
-void HeroCharacter::push(Direction direction) {
-    Character::push(direction);
+void HeroCharacter::push(Sprite* target) {
+    // check the position of the object
+    Point targetPosition = target->getPosition();
+    if (targetPosition.x - this->getPositionX() > 0) {
+        // target is at the right of hero
+        if(this->getCurrentDirection() == DIRECTION_RIGHT) {
+            Character::push(target);
+        }
+    }else {
+        // target is at the left of hero
+        if(this->getCurrentDirection() == DIRECTION_LEFT) {
+            Character::push(target);
+        }
+    }
+    
 }
 
 void HeroCharacter::update(float dt) {

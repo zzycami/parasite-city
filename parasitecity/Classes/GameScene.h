@@ -29,6 +29,11 @@ public:
     CREATE_FUNC(GameScene);
     
     void initPhysicsBoundary();
+    void initDynamicObjects();
+    
+    bool onContactBegin(cocos2d::PhysicsContact &contact);
+    void onContactSeperate(cocos2d::PhysicsContact &contact);
 private:
     OptionLayer* optionLayer;
+    Sprite* steelBox;
 };

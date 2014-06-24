@@ -28,7 +28,7 @@ public:
     void hurt();
     void knockout();
     void squatwalk(Direction direction);
-    void push(Direction direction);
+    void push(Sprite* target);
     void update(float dt);
     
     // single instance
