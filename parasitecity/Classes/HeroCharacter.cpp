@@ -59,7 +59,7 @@ void HeroCharacter::configurePhysicsBody() {
     heroBody->setCategoryBitmask(ColliderTypeHero);
     heroBody->setCollisionBitmask(ColliderTypeWall | ColliderTypeBox);
     heroBody->setContactTestBitmask(ColliderTypeBox);
-    heroBody->setDynamic(false);
+    heroBody->setDynamic(true);
     this->setTag(Tag::TagHero);
 	this->setPhysicsBody(heroBody);
 }
@@ -67,7 +67,8 @@ void HeroCharacter::configurePhysicsBody() {
 void HeroCharacter::idle(Direction direction) {
     if(this->getActionState() == ACTION_STATE_PUSH) {
         // if hero is push state, when the user stop walk, stop the push animation
-        //this->getPushAction()->stop();
+        //this->stopAction(this->getPushAction());
+        this->pause();
         return;
     }
     Character::idle(direction);
@@ -75,10 +76,15 @@ void HeroCharacter::idle(Direction direction) {
 
 
 void HeroCharacter::walk(Direction direction) {
+    if (this->getPhysicsBody()->isDynamic()) {
+        // When we want to set the hero's postion
+        this->getPhysicsBody()->setDynamic(false);
+    }
+    
     if (this->getActionState() == ACTION_STATE_PUSH) {
+        this->resume();
         // if the next directon is not the push direction, change to walk state
         if (this->getCurrentDirection() == direction) {
-            //this->getPushAction()->startWithTarget(this);
             return;
         }
     }

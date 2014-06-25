@@ -12,7 +12,7 @@
 
 bool GameScene::init() {
     if (Scene::initWithPhysics()) {
-        //this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+        this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
         auto hero = HeroCharacter::getInstance();
         hero->setPosition(100, 100);
         hero->idle(DIRECTION_RIGHT);
