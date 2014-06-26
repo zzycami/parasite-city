@@ -41,4 +41,6 @@ public:
 private:
     static HeroCharacter* sharedHeroSprite;
     float walkSpeed;
+    float pushSpeed;
+    void move(float speed, float dt);
 };

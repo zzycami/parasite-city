@@ -43,7 +43,8 @@ bool HeroCharacter::init() {
 		this->setPushAction(RepeatForever::create(Animate::create(push)));
         
         this->setCurrentDirection(DIRECTION_RIGHT);
-        this->walkSpeed = 300;
+        this->walkSpeed = 200;
+        this->pushSpeed = 50;
         
         this->scheduleUpdate();
         return true;
@@ -67,7 +68,6 @@ void HeroCharacter::configurePhysicsBody() {
     heroBody->setCategoryBitmask(ColliderTypeHero);
     heroBody->setCollisionBitmask(ColliderTypeWall | ColliderTypeBox);
     heroBody->setContactTestBitmask(ColliderTypeBox);
-    heroBody->setDynamic(true);
     this->setTag(Tag::TagHero);
 	this->setPhysicsBody(heroBody);
 }
@@ -75,7 +75,6 @@ void HeroCharacter::configurePhysicsBody() {
 void HeroCharacter::idle(Direction direction) {
     if(this->getActionState() == ACTION_STATE_PUSH) {
         // if hero is push state, when the user stop walk, stop the push animation
-        //this->stopAction(this->getPushAction());
         this->pause();
         return;
     }
@@ -86,7 +85,7 @@ void HeroCharacter::idle(Direction direction) {
 void HeroCharacter::walk(Direction direction) {
     if (this->getPhysicsBody()->isDynamic()) {
         // When we want to set the hero's postion
-        this->getPhysicsBody()->setDynamic(false);
+        //this->getPhysicsBody()->setDynamic(false);
     }
     
     if (this->getActionState() == ACTION_STATE_PUSH) {
@@ -146,9 +145,14 @@ void HeroCharacter::push(Sprite* target) {
 
 void HeroCharacter::update(float dt) {
     if (this->getActionState() == ACTION_STATE_WALK) {
-        auto deltaDistance = (this->getCurrentDirection() == DIRECTION_LEFT?-1:1)*this->walkSpeed*dt;
-        auto detalVect = Point(this->getPositionX() + deltaDistance, this->getPositionY());
-        this->setPosition(detalVect);
+        this->move(this->walkSpeed, dt);
+    }else if(this->getActionState() == ACTION_STATE_PUSH) {
+        this->move(this->pushSpeed, dt);
     }
 }
 
+void HeroCharacter::move(float speed, float dt) {
+    auto deltaDistance = (this->getCurrentDirection() == DIRECTION_LEFT?-1:1)*speed*dt;
+    auto detalVect = Point(this->getPositionX() + deltaDistance, this->getPositionY());
+    this->setPosition(detalVect);
+}
