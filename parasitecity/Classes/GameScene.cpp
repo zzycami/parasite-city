@@ -43,32 +43,20 @@ bool GameScene::init() {
 
 bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
     HeroCharacter* hero;
-    auto spriteA = (Sprite*)contact.getShapeA()->getBody()->getNode();
-    auto spriteB = (Sprite*)contact.getShapeB()->getBody()->getNode();
+    auto shapeA = contact.getShapeA();
+    auto shapeB = contact.getShapeB();
     
-    if(spriteA->getTag() == TagHero && spriteB->getTag() == TagBox) {
-        hero = (HeroCharacter*) spriteA;
-        hero->push(spriteB);
-    } else if(spriteA->getTag() == TagBox && spriteB->getTag() == TagHero) {
-        hero = (HeroCharacter*) spriteB;
-        hero->push(spriteA);
+    if(shapeA->getTag() == ShapeTagPush && shapeB->getTag() == ShapeTagBox) {
+        hero = (HeroCharacter*) shapeA->getBody()->getNode();
+        hero->push((Sprite*)shapeB->getBody()->getNode());
+    } else if(shapeA->getTag() == ShapeTagPush && shapeB->getTag() == ShapeTagBox) {
+        hero = (HeroCharacter*) shapeB->getBody()->getNode();
+        hero->push((Sprite*)shapeA->getBody()->getNode());
     }
-    
     return true;
 }
 
 void GameScene::onContactSeperate(cocos2d::PhysicsContact &contact) {
-//    auto spriteA = (Sprite*)contact.getShapeA()->getBody()->getNode();
-//    auto spriteB = (Sprite*)contact.getShapeB()->getBody()->getNode();
-//    if(spriteA->getTag() == TagHero && spriteB->getTag() == TagBox) {
-//        HeroCharacter::getInstance()->setActionState(ACTION_STATE_IDLE);
-//        HeroCharacter::getInstance()->idle(DIRECTION_LEFT);
-//        printf("over");
-//    } else if(spriteA->getTag() == TagBox && spriteB->getTag() == TagHero) {
-//        HeroCharacter::getInstance()->setActionState(ACTION_STATE_IDLE);
-//        HeroCharacter::getInstance()->idle(DIRECTION_LEFT);
-//        printf("over");
-//    }
 }
 
 void GameScene::onWalk(Direction direction) {
