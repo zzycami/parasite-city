@@ -42,6 +42,12 @@ typedef enum : int {
     TagHero = 2
 }Tag;
 
+typedef enum : int {
+    ShapeTagPush = 1,
+    ShapeTagBody = 2,
+    ShapeTagBox = 3
+}ShapeTag;
+
 class Character:public Sprite {
 public:
     Character();

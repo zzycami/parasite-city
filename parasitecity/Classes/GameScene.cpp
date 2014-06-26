@@ -14,7 +14,7 @@ bool GameScene::init() {
     if (Scene::initWithPhysics()) {
         this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
         auto hero = HeroCharacter::getInstance();
-        hero->setPosition(100, 100);
+        hero->setPosition(400, 100);
         hero->idle(DIRECTION_RIGHT);
         hero->configurePhysicsBody();
         this->addChild(hero);
@@ -109,7 +109,12 @@ void GameScene::initPhysicsBoundary() {
 void GameScene::initDynamicObjects(){
     steelBox = Sprite::create("steel_box.png");
     steelBox->setPosition(SteelBox1Position.x + steelBox->getContentSize().width/2, SteelBox1Position.y + steelBox->getContentSize().height/2);
-    auto steelBoxBody = PhysicsBody::createBox(steelBox->getContentSize(), PhysicsMaterial(7850.0f, 0.5f, 10));
+    
+    auto steelShape = PhysicsShapeBox::create(steelBox->getContentSize(), PhysicsMaterial(7850.0f, 0, 0));
+    steelShape->setTag(ShapeTagBox);
+    auto steelBoxBody = PhysicsBody::create();
+    steelBoxBody->addShape(steelShape);
+    
     steelBoxBody->setDynamic(true);
     steelBoxBody->setRotationEnable(false);
     steelBoxBody->setCategoryBitmask(ColliderTypeBox);

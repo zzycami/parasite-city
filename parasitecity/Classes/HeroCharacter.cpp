@@ -53,7 +53,15 @@ bool HeroCharacter::init() {
 }
 
 void HeroCharacter::configurePhysicsBody() {
-    auto heroBody = PhysicsBody::createBox(this->getContentSize());
+    auto heroBody = PhysicsBody::create();
+    auto shapeBody = PhysicsShapeBox::create(Size(68, 180), HeroPhysicsMaterial, Vec2(0, -35));
+    shapeBody->setTag(ShapeTagBody);
+    heroBody->addShape(shapeBody);
+    
+    auto shapePush = PhysicsShapeBox::create(Size(148, 40), HeroPhysicsMaterial, Vec2(0, -20));
+    shapePush->setTag(ShapeTagPush);
+    heroBody->addShape(shapePush);
+    
 	heroBody->setDynamic(true);
     heroBody->setRotationEnable(false);
     heroBody->setCategoryBitmask(ColliderTypeHero);

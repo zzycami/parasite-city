@@ -13,6 +13,9 @@
 using namespace cocos2d;
 
 
+const PhysicsMaterial HeroPhysicsMaterial = PhysicsMaterial(1000.0f, 0.0f, 0.0f);
+
+
 class HeroCharacter : public Character {
 public:
     HeroCharacter();
