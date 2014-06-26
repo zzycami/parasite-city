@@ -44,7 +44,7 @@ bool HeroCharacter::init() {
         
         this->setCurrentDirection(DIRECTION_RIGHT);
         this->walkSpeed = 200;
-        this->pushSpeed = 50;
+        this->pushSpeed = 30;
         
         this->scheduleUpdate();
         return true;
@@ -62,12 +62,12 @@ void HeroCharacter::configurePhysicsBody() {
     auto shapePush = PhysicsShapeBox::create(Size(148, 40), HeroPhysicsMaterial, Vec2(0, -20));
     shapePush->setTag(ShapeTagPush);
     heroBody->addShape(shapePush);
-    
-	heroBody->setDynamic(true);
+	
     heroBody->setRotationEnable(false);
     heroBody->setCategoryBitmask(ColliderTypeHero);
     heroBody->setCollisionBitmask(ColliderTypeWall | ColliderTypeBox);
     heroBody->setContactTestBitmask(ColliderTypeBox);
+    heroBody->setDynamic(false);
     this->setTag(Tag::TagHero);
 	this->setPhysicsBody(heroBody);
 }
