@@ -87,7 +87,6 @@ void HeroCharacter::walk(Direction direction) {
         // When we want to set the hero's postion
         //this->getPhysicsBody()->setDynamic(false);
     }
-    
     if (this->getActionState() == ACTION_STATE_PUSH) {
         this->resume();
         // if the next directon is not the push direction, change to walk state

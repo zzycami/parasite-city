@@ -12,7 +12,8 @@
 
 bool GameScene::init() {
     if (Scene::initWithPhysics()) {
-        this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+        //this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+        this->getPhysicsWorld()->setGravity(Vec2(0, -10));
         auto hero = HeroCharacter::getInstance();
         hero->setPosition(100, 150);
         hero->idle(DIRECTION_RIGHT);
@@ -51,7 +52,7 @@ void GameScene::pushDetective(cocos2d::PhysicsContact &contact) {
         if (hero->getActionState() != ACTION_STATE_PUSH) {
             hero->push((Sprite*)shapeB->getBody()->getNode());
         }
-    } else if(shapeA->getTag() == ShapeTagPush && shapeB->getTag() == ShapeTagBox) {
+    } else if(shapeB->getTag() == ShapeTagPush && shapeA->getTag() == ShapeTagBox) {
         hero = (HeroCharacter*) shapeB->getBody()->getNode();
         if (hero->getActionState() != ACTION_STATE_PUSH) {
             hero->push((Sprite*)shapeA->getBody()->getNode());
@@ -116,7 +117,7 @@ void GameScene::initDynamicObjects(){
     steelBox = Sprite::create("steel_box.png");
     steelBox->setPosition(SteelBox1Position.x + steelBox->getContentSize().width/2, SteelBox1Position.y + steelBox->getContentSize().height/2);
     
-    auto steelShape = PhysicsShapeBox::create(steelBox->getContentSize(), PhysicsMaterial(7850.0f, 0, 0));
+    auto steelShape = PhysicsShapeBox::create(steelBox->getContentSize(), PhysicsMaterial(78500.0f, 0, 0));
     steelShape->setTag(ShapeTagBox);
     auto steelBoxBody = PhysicsBody::create();
     steelBoxBody->addShape(steelShape);
@@ -124,7 +125,7 @@ void GameScene::initDynamicObjects(){
     steelBoxBody->setDynamic(true);
     steelBoxBody->setRotationEnable(false);
     steelBoxBody->setCategoryBitmask(ColliderTypeBox);
-    steelBoxBody->setContactTestBitmask(ColliderTypeHero);
+    steelBoxBody->setContactTestBitmask(0xFFFFFFFF);
     steelBox->setPhysicsBody(steelBoxBody);
     steelBox->setTag(Tag::TagBox);
     this->addChild(steelBox);
