@@ -68,10 +68,6 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 }
 
 bool GameScene::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve &solve){
-    this->pushDetective(contact);
-    solve.setFriction(0);
-    solve.setRestitution(0);
-    //solve.setSurfaceVelocity(0);
     return true;
 }
 
