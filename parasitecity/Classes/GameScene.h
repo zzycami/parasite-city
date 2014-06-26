@@ -32,8 +32,10 @@ public:
     void initDynamicObjects();
     
     bool onContactBegin(cocos2d::PhysicsContact &contact);
+    bool onContactPreSolve(PhysicsContact& contact, PhysicsContactPreSolve& solve);
     void onContactSeperate(cocos2d::PhysicsContact &contact);
 private:
     OptionLayer* optionLayer;
     Sprite* steelBox;
+    void pushDetective(cocos2d::PhysicsContact &contact);
 };

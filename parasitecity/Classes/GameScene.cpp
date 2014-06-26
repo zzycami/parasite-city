@@ -31,6 +31,7 @@ bool GameScene::init() {
         // dispatch contact listener
         auto contactListener = EventListenerPhysicsContact::create();
         contactListener->onContactBegin = CC_CALLBACK_1(GameScene::onContactBegin, this);
+        contactListener->onContactPreSolve = CC_CALLBACK_2(GameScene::onContactPreSolve, this);
         contactListener->onContactSeperate = CC_CALLBACK_1(GameScene::onContactSeperate, this);
         this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(contactListener, this);
         
@@ -40,19 +41,36 @@ bool GameScene::init() {
     }
 }
 
-
-bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
+void GameScene::pushDetective(cocos2d::PhysicsContact &contact) {
     HeroCharacter* hero;
     auto shapeA = contact.getShapeA();
     auto shapeB = contact.getShapeB();
     
     if(shapeA->getTag() == ShapeTagPush && shapeB->getTag() == ShapeTagBox) {
         hero = (HeroCharacter*) shapeA->getBody()->getNode();
-        hero->push((Sprite*)shapeB->getBody()->getNode());
+        if (hero->getActionState() != ACTION_STATE_PUSH) {
+            hero->push((Sprite*)shapeB->getBody()->getNode());
+        }
     } else if(shapeA->getTag() == ShapeTagPush && shapeB->getTag() == ShapeTagBox) {
         hero = (HeroCharacter*) shapeB->getBody()->getNode();
-        hero->push((Sprite*)shapeA->getBody()->getNode());
+        if (hero->getActionState() != ACTION_STATE_PUSH) {
+            hero->push((Sprite*)shapeA->getBody()->getNode());
+        }
     }
+
+}
+
+
+bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
+    this->pushDetective(contact);
+    return true;
+}
+
+bool GameScene::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve &solve){
+    this->pushDetective(contact);
+    solve.setFriction(0);
+    solve.setRestitution(0);
+    //solve.setSurfaceVelocity(0);
     return true;
 }
 
