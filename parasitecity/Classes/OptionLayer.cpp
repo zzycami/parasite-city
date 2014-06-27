@@ -35,10 +35,12 @@ void OptionLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event *even
 	for (auto touch : touches){
 		Point position = touch->getLocation();
         auto deltaAngle = this->delegator->getReferencePoint() - position;
-        if (deltaAngle.x < 0) {
+        if (deltaAngle.x < 0 && deltaAngle.y < 0) {
             this->delegator->onWalk(Direction::DIRECTION_RIGHT);
-        }else {
+        }else if(deltaAngle.x > 0 && deltaAngle.y < 0){
             this->delegator->onWalk(Direction::DIRECTION_LEFT);
+        }else {
+            this->delegator->onSquat();
         }
     }
 }

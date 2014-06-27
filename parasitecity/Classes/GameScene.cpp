@@ -68,6 +68,9 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 }
 
 bool GameScene::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve &solve){
+    if(HeroCharacter::getInstance()->getActionState() == ACTION_STATE_PUSH) {
+        this->pushDetective(contact);
+    }
     return true;
 }
 
@@ -86,6 +89,7 @@ void GameScene::onJump() {
 }
 
 void GameScene::onSquat() {
+    HeroCharacter::getInstance()->squat();
 }
 
 void GameScene::onStop() {

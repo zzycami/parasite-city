@@ -32,6 +32,8 @@ public:
     void knockout();
     void squatwalk(Direction direction);
     void push(Sprite* target);
+    void climb(Sprite* target);
+    void squat();
     void update(float dt);
     
     // single instance

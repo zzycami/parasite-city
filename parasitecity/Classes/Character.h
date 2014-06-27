@@ -25,7 +25,9 @@ typedef enum : int{
     ACTION_STATE_HURT, // The character get hurt
     ACTION_STATE_KNOCKOUT, // The character is down
 	ACTION_STATE_SQUATWALK, // The character is squat walk
-	ACTION_STATE_PUSH //The character is pushing
+	ACTION_STATE_PUSH, //The character is pushing
+    ACTION_STATE_CLIMB,
+    ACTION_STATE_SQUAT
 } ActionState;
 
 /* Bitmask for the different entities with physics bodies. */
@@ -61,6 +63,8 @@ public:
     void knockout();
 	void squatwalk(Direction direction);
 	void push(Sprite* target);
+    void climb(Sprite* target);
+    void squat(Direction direction);
     
     // Physical
     void configurePhysicsBody();
@@ -76,6 +80,8 @@ public:
     CC_SYNTHESIZE_RETAIN(Action*, walkAction, WalkAction);
 	CC_SYNTHESIZE_RETAIN(Action*, pushAction, PushAction);
 	CC_SYNTHESIZE_RETAIN(Action*, squatwalkAction, SquatwalkAction);
+    CC_SYNTHESIZE_RETAIN(Action*, squatAction, SquatAction);
+    CC_SYNTHESIZE_RETAIN(FiniteTimeAction*, climbAction, ClimbAction);
     
     CC_SYNTHESIZE(ActionState, currentState, ActionState);
     CC_SYNTHESIZE(float, health, Health);
@@ -84,7 +90,6 @@ public:
     
 protected:
     static cocos2d::Animation *createAnimation(const char *fmt, int count, float fps);
-    
-private:
+    static Animation *createAnimation(const char *fmt, int count, float fps, int start);
     bool changeState(ActionState state);
 };

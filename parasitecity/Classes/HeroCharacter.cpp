@@ -42,6 +42,12 @@ bool HeroCharacter::init() {
 		Animation *push = this->createAnimation("hero_push%02d.png",10, 5);
 		this->setPushAction(RepeatForever::create(Animate::create(push)));
         
+        Animation *squat = this->createAnimation("squat%02d.png", 9, 5, 1);
+        this->setSquatAction(RepeatForever::create(Animate::create(squat)));
+        
+        Animation *climb = this->createAnimation("climb%02d.png", 3, 3, 1);
+        this->setClimbAction(Animate::create(climb));
+        
         this->setCurrentDirection(DIRECTION_RIGHT);
         this->walkSpeed = 200;
         this->pushSpeed = 30;
@@ -73,9 +79,10 @@ void HeroCharacter::configurePhysicsBody() {
 }
 
 void HeroCharacter::idle(Direction direction) {
-    if(this->getActionState() == ACTION_STATE_PUSH) {
+    if(this->getActionState() == ACTION_STATE_PUSH || this->getActionState() == ACTION_STATE_SQUAT) {
         // if hero is push state, when the user stop walk, stop the push animation
         this->pause();
+        this->setSpriteFrame(SpriteFrame::create("climb01.png", Rect(0, 0, 255, 255)));
         return;
     }
     Character::idle(direction);
@@ -140,6 +147,21 @@ void HeroCharacter::push(Sprite* target) {
         }
     }
     
+}
+
+void HeroCharacter::climb(cocos2d::Sprite *target) {
+    if (this->getActionState() == ACTION_STATE_PUSH) {
+        if(changeState(ACTION_STATE_CLIMB)) {
+            auto actionDone = CallFunc::create(std::bind(&HeroCharacter::squat, this));
+            auto sequence = Sequence::createWithTwoActions(this->getClimbAction(), actionDone);
+            this->runAction(sequence);
+        }
+    }
+}
+
+void HeroCharacter::squat() {
+    this->resume();
+    Character::squat(this->getCurrentDirection());
 }
 
 void HeroCharacter::update(float dt) {
