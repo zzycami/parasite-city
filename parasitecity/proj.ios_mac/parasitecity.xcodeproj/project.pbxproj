@@ -130,6 +130,30 @@
 		51AF14151958140700AA9D9D /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51AF14121958140700AA9D9D /* OptionLayer.cpp */; };
 		51AF141A195818D400AA9D9D /* pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AF1419195818D400AA9D9D /* pad.png */; };
 		51AF141B195818D400AA9D9D /* pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AF1419195818D400AA9D9D /* pad.png */; };
+		51D133D5195D089E0035BE52 /* climb01.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D2195D089E0035BE52 /* climb01.png */; };
+		51D133D6195D089E0035BE52 /* climb01.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D2195D089E0035BE52 /* climb01.png */; };
+		51D133D7195D089E0035BE52 /* climb02.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D3195D089E0035BE52 /* climb02.png */; };
+		51D133D8195D089E0035BE52 /* climb02.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D3195D089E0035BE52 /* climb02.png */; };
+		51D133D9195D089E0035BE52 /* climb03.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D4195D089E0035BE52 /* climb03.png */; };
+		51D133DA195D089E0035BE52 /* climb03.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D4195D089E0035BE52 /* climb03.png */; };
+		51D133E7195D08A80035BE52 /* squat002.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133DE195D08A80035BE52 /* squat002.png */; };
+		51D133E8195D08A80035BE52 /* squat002.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133DE195D08A80035BE52 /* squat002.png */; };
+		51D133E9195D08A80035BE52 /* squat003.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133DF195D08A80035BE52 /* squat003.png */; };
+		51D133EA195D08A80035BE52 /* squat003.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133DF195D08A80035BE52 /* squat003.png */; };
+		51D133EB195D08A80035BE52 /* squat004.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E0195D08A80035BE52 /* squat004.png */; };
+		51D133EC195D08A80035BE52 /* squat004.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E0195D08A80035BE52 /* squat004.png */; };
+		51D133ED195D08A80035BE52 /* squat005.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E1195D08A80035BE52 /* squat005.png */; };
+		51D133EE195D08A80035BE52 /* squat005.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E1195D08A80035BE52 /* squat005.png */; };
+		51D133EF195D08A80035BE52 /* squat006.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E2195D08A80035BE52 /* squat006.png */; };
+		51D133F0195D08A80035BE52 /* squat006.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E2195D08A80035BE52 /* squat006.png */; };
+		51D133F1195D08A80035BE52 /* squat007.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E3195D08A80035BE52 /* squat007.png */; };
+		51D133F2195D08A80035BE52 /* squat007.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E3195D08A80035BE52 /* squat007.png */; };
+		51D133F3195D08A80035BE52 /* squat008.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E4195D08A80035BE52 /* squat008.png */; };
+		51D133F4195D08A80035BE52 /* squat008.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E4195D08A80035BE52 /* squat008.png */; };
+		51D133F5195D08A80035BE52 /* squat009.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E5195D08A80035BE52 /* squat009.png */; };
+		51D133F6195D08A80035BE52 /* squat009.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E5195D08A80035BE52 /* squat009.png */; };
+		51D133F7195D08A80035BE52 /* squat01.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E6195D08A80035BE52 /* squat01.png */; };
+		51D133F8195D08A80035BE52 /* squat01.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133E6195D08A80035BE52 /* squat01.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -366,6 +390,18 @@
 		51AF14121958140700AA9D9D /* OptionLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionLayer.cpp; sourceTree = "<group>"; };
 		51AF14131958140700AA9D9D /* OptionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionLayer.h; sourceTree = "<group>"; };
 		51AF1419195818D400AA9D9D /* pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad.png; sourceTree = "<group>"; };
+		51D133D2195D089E0035BE52 /* climb01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = climb01.png; sourceTree = "<group>"; };
+		51D133D3195D089E0035BE52 /* climb02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = climb02.png; sourceTree = "<group>"; };
+		51D133D4195D089E0035BE52 /* climb03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = climb03.png; sourceTree = "<group>"; };
+		51D133DE195D08A80035BE52 /* squat002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat002.png; sourceTree = "<group>"; };
+		51D133DF195D08A80035BE52 /* squat003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat003.png; sourceTree = "<group>"; };
+		51D133E0195D08A80035BE52 /* squat004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat004.png; sourceTree = "<group>"; };
+		51D133E1195D08A80035BE52 /* squat005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat005.png; sourceTree = "<group>"; };
+		51D133E2195D08A80035BE52 /* squat006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat006.png; sourceTree = "<group>"; };
+		51D133E3195D08A80035BE52 /* squat007.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat007.png; sourceTree = "<group>"; };
+		51D133E4195D08A80035BE52 /* squat008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat008.png; sourceTree = "<group>"; };
+		51D133E5195D08A80035BE52 /* squat009.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat009.png; sourceTree = "<group>"; };
+		51D133E6195D08A80035BE52 /* squat01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat01.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -573,6 +609,8 @@
 		514F7C0E1952E19400B80F2E /* Hero */ = {
 			isa = PBXGroup;
 			children = (
+				51D133DD195D08A80035BE52 /* squat */,
+				51D133D1195D089E0035BE52 /* climb */,
 				514F7C0F1952E19400B80F2E /* Idle */,
 				514F7C141952E19400B80F2E /* Push */,
 				514F7C1F1952E19400B80F2E /* Run */,
@@ -694,6 +732,32 @@
 				51AF1419195818D400AA9D9D /* pad.png */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		51D133D1195D089E0035BE52 /* climb */ = {
+			isa = PBXGroup;
+			children = (
+				51D133D2195D089E0035BE52 /* climb01.png */,
+				51D133D3195D089E0035BE52 /* climb02.png */,
+				51D133D4195D089E0035BE52 /* climb03.png */,
+			);
+			path = climb;
+			sourceTree = "<group>";
+		};
+		51D133DD195D08A80035BE52 /* squat */ = {
+			isa = PBXGroup;
+			children = (
+				51D133DE195D08A80035BE52 /* squat002.png */,
+				51D133DF195D08A80035BE52 /* squat003.png */,
+				51D133E0195D08A80035BE52 /* squat004.png */,
+				51D133E1195D08A80035BE52 /* squat005.png */,
+				51D133E2195D08A80035BE52 /* squat006.png */,
+				51D133E3195D08A80035BE52 /* squat007.png */,
+				51D133E4195D08A80035BE52 /* squat008.png */,
+				51D133E5195D08A80035BE52 /* squat009.png */,
+				51D133E6195D08A80035BE52 /* squat01.png */,
+			);
+			path = squat;
 			sourceTree = "<group>";
 		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
@@ -871,8 +935,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D133D9195D089E0035BE52 /* climb03.png in Resources */,
+				51D133D5195D089E0035BE52 /* climb01.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				514F7C491952E19400B80F2E /* hero_push08.png in Resources */,
+				51D133E9195D08A80035BE52 /* squat003.png in Resources */,
 				514F7C311952E19400B80F2E /* hero_idle0.png in Resources */,
 				514F7C3F1952E19400B80F2E /* hero_push03.png in Resources */,
 				514F7C4F1952E19400B80F2E /* hero_run01.png in Resources */,
@@ -880,11 +947,16 @@
 				5155D09A195975DD003E3ECF /* platform1.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				514F7C451952E19400B80F2E /* hero_push06.png in Resources */,
+				51D133F3195D08A80035BE52 /* squat008.png in Resources */,
 				514F7C5D1952E19400B80F2E /* hero_squat_walk00.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				51D133F1195D08A80035BE52 /* squat007.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				51D133D7195D089E0035BE52 /* climb02.png in Resources */,
 				514F7C591952E19400B80F2E /* hero_run06.png in Resources */,
 				51AF141A195818D400AA9D9D /* pad.png in Resources */,
+				51D133E7195D08A80035BE52 /* squat002.png in Resources */,
+				51D133EF195D08A80035BE52 /* squat006.png in Resources */,
 				5155D09C195975DD003E3ECF /* steel_box.png in Resources */,
 				514F7C611952E19400B80F2E /* hero_squat_walk02.png in Resources */,
 				514F7C3B1952E19400B80F2E /* hero_push01.png in Resources */,
@@ -897,9 +969,11 @@
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				514F7C671952E19400B80F2E /* hero_squat_walk05.png in Resources */,
+				51D133F5195D08A80035BE52 /* squat009.png in Resources */,
 				514F7C431952E19400B80F2E /* hero_push05.png in Resources */,
 				514F7C531952E19400B80F2E /* hero_run03.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				51D133ED195D08A80035BE52 /* squat005.png in Resources */,
 				514F7C371952E19400B80F2E /* hero_idle3.png in Resources */,
 				514F7C631952E19400B80F2E /* hero_squat_walk03.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -910,6 +984,8 @@
 				514F7C511952E19400B80F2E /* hero_run02.png in Resources */,
 				514F7C331952E19400B80F2E /* hero_idle1.png in Resources */,
 				514F7C471952E19400B80F2E /* hero_push07.png in Resources */,
+				51D133F7195D08A80035BE52 /* squat01.png in Resources */,
+				51D133EB195D08A80035BE52 /* squat004.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				514F7C5F1952E19400B80F2E /* hero_squat_walk01.png in Resources */,
 				514F7C411952E19400B80F2E /* hero_push04.png in Resources */,
@@ -931,32 +1007,44 @@
 				514F7C321952E19400B80F2E /* hero_idle0.png in Resources */,
 				514F7C421952E19400B80F2E /* hero_push04.png in Resources */,
 				5155D09D195975DD003E3ECF /* steel_box.png in Resources */,
+				51D133F6195D08A80035BE52 /* squat009.png in Resources */,
 				514F7C3E1952E19400B80F2E /* hero_push02.png in Resources */,
 				514F7C4E1952E19400B80F2E /* hero_run00.png in Resources */,
 				514F7C621952E19400B80F2E /* hero_squat_walk02.png in Resources */,
 				5155D09B195975DD003E3ECF /* platform1.png in Resources */,
 				514F7C481952E19400B80F2E /* hero_push07.png in Resources */,
+				51D133EC195D08A80035BE52 /* squat004.png in Resources */,
 				514F7C381952E19400B80F2E /* hero_idle3.png in Resources */,
 				514F7C641952E19400B80F2E /* hero_squat_walk03.png in Resources */,
+				51D133F8195D08A80035BE52 /* squat01.png in Resources */,
 				514F7C661952E19400B80F2E /* hero_squat_walk04.png in Resources */,
+				51D133F4195D08A80035BE52 /* squat008.png in Resources */,
 				514F7C4A1952E19400B80F2E /* hero_push08.png in Resources */,
 				514F7C341952E19400B80F2E /* hero_idle1.png in Resources */,
 				514F7C461952E19400B80F2E /* hero_push06.png in Resources */,
 				514F7C361952E19400B80F2E /* hero_idle2.png in Resources */,
 				514F7C541952E19400B80F2E /* hero_run03.png in Resources */,
+				51D133EE195D08A80035BE52 /* squat005.png in Resources */,
+				51D133F2195D08A80035BE52 /* squat007.png in Resources */,
 				51AF141B195818D400AA9D9D /* pad.png in Resources */,
 				514F7C681952E19400B80F2E /* hero_squat_walk05.png in Resources */,
+				51D133EA195D08A80035BE52 /* squat003.png in Resources */,
+				51D133E8195D08A80035BE52 /* squat002.png in Resources */,
 				514F7C441952E19400B80F2E /* hero_push05.png in Resources */,
 				514F7C401952E19400B80F2E /* hero_push03.png in Resources */,
 				514F7C501952E19400B80F2E /* hero_run01.png in Resources */,
 				514F7C4C1952E19400B80F2E /* hero_push09.png in Resources */,
 				514F7C561952E19400B80F2E /* hero_run04.png in Resources */,
 				514F7C5E1952E19400B80F2E /* hero_squat_walk00.png in Resources */,
+				51D133DA195D089E0035BE52 /* climb03.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				514F7C6C1952E19400B80F2E /* hero_squat_walk07.png in Resources */,
 				514F7C521952E19400B80F2E /* hero_run02.png in Resources */,
 				514F7C581952E19400B80F2E /* hero_run05.png in Resources */,
 				514F7C5A1952E19400B80F2E /* hero_run06.png in Resources */,
+				51D133D6195D089E0035BE52 /* climb01.png in Resources */,
+				51D133D8195D089E0035BE52 /* climb02.png in Resources */,
+				51D133F0195D08A80035BE52 /* squat006.png in Resources */,
 				514F7C3C1952E19400B80F2E /* hero_push01.png in Resources */,
 				514F7C3A1952E19400B80F2E /* hero_push00.png in Resources */,
 				514F7C601952E19400B80F2E /* hero_squat_walk01.png in Resources */,
