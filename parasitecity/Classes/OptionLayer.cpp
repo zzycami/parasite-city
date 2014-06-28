@@ -50,5 +50,12 @@ void OptionLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event *even
 }
 
 void OptionLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event *event) {
+    for (auto touch : touches){
+        auto startLocation = touch->getStartLocation();
+        auto endLocation = touch->getLocation();
+        if(endLocation.y - startLocation.y  > 100) {
+            this->delegator->onJump();
+        }
+    }
 	this->delegator->onStop();
 }

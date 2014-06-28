@@ -42,10 +42,10 @@ bool HeroCharacter::init() {
 		Animation *push = this->createAnimation("hero_push%02d.png",10, 5);
 		this->setPushAction(RepeatForever::create(Animate::create(push)));
         
-        Animation *squat = this->createAnimation("squat%02d.png", 9, 5, 1);
+        Animation *squat = this->createAnimation("squat%02d.png", 10, 5, 1);
         this->setSquatAction(RepeatForever::create(Animate::create(squat)));
         
-        Animation *climb = this->createAnimation("climb%02d.png", 3, 3, 1);
+        Animation *climb = this->createAnimation("climb%02d.png", 4, 3, 1);
         this->setClimbAction(Animate::create(climb));
         
         this->setCurrentDirection(DIRECTION_RIGHT);
@@ -78,11 +78,25 @@ void HeroCharacter::configurePhysicsBody() {
 	this->setPhysicsBody(heroBody);
 }
 
+void HeroCharacter::addPushShape() {
+    if (this->getPhysicsBody()->getShape(ShapeTagPush) == NULL) {
+        auto shapePush = PhysicsShapeBox::create(Size(148, 40), HeroPhysicsMaterial, Vec2(0, -20));
+        shapePush->setTag(ShapeTagPush);
+        shapePush->setCategoryBitmask(ColliderTypeHero);
+        shapePush->setCollisionBitmask(ColliderTypeWall | ColliderTypeBox);
+        shapePush->setContactTestBitmask(ColliderTypeBox);
+        this->getPhysicsBody()->addShape(shapePush);
+    }
+}
+
 void HeroCharacter::idle(Direction direction) {
-    if(this->getActionState() == ACTION_STATE_PUSH || this->getActionState() == ACTION_STATE_SQUAT) {
+    if(this->getActionState() == ACTION_STATE_PUSH) {
         // if hero is push state, when the user stop walk, stop the push animation
         this->pause();
         this->setSpriteFrame(SpriteFrame::create("climb01.png", Rect(0, 0, 255, 255)));
+        this->getPhysicsBody()->removeShape(ShapeTagPush);
+        return;
+    }else if(this->getActionState() == ACTION_STATE_CLIMB) {
         return;
     }
     Character::idle(direction);
@@ -90,6 +104,7 @@ void HeroCharacter::idle(Direction direction) {
 
 
 void HeroCharacter::walk(Direction direction) {
+    this->addPushShape();
     if (this->getPhysicsBody()->isDynamic()) {
         // When we want to set the hero's postion
         //this->getPhysicsBody()->setDynamic(false);
@@ -133,6 +148,7 @@ void HeroCharacter::squatwalk(Direction direction) {
 
 
 void HeroCharacter::push(Sprite* target) {
+    this->setInteractiveTarget(target);
     // check the position of the object
     Point targetPosition = target->getPosition();
     if (targetPosition.x - this->getPositionX() > 0) {
@@ -150,13 +166,24 @@ void HeroCharacter::push(Sprite* target) {
 }
 
 void HeroCharacter::climb(cocos2d::Sprite *target) {
+    this->setInteractiveTarget(target);
     if (this->getActionState() == ACTION_STATE_PUSH) {
         if(changeState(ACTION_STATE_CLIMB)) {
-            auto actionDone = CallFunc::create(std::bind(&HeroCharacter::squat, this));
+            //this->getPhysicsBody()->setDynamic(false);
+            auto actionDone = CallFunc::create(std::bind(&HeroCharacter::climbCallBack, this));
             auto sequence = Sequence::createWithTwoActions(this->getClimbAction(), actionDone);
             this->runAction(sequence);
         }
     }
+}
+
+void HeroCharacter::climbCallBack() {
+    float afterPositionX = this->getInteractiveTarget()->getPositionX();
+    float afterPositionY = this->getInteractiveTarget()->getPositionY() + this->getInteractiveTarget()->getContentSize().height/2 + this->getContentSize().height/2;
+    this->setPosition(afterPositionX, afterPositionY);
+    this->getPhysicsBody()->setDynamic(true);
+    this->getPhysicsBody()->setRotationEnable(false);
+    Character::squat(this->getCurrentDirection());
 }
 
 void HeroCharacter::squat() {

@@ -12,8 +12,8 @@
 
 bool GameScene::init() {
     if (Scene::initWithPhysics()) {
-        //this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
-        this->getPhysicsWorld()->setGravity(Vec2(0, -10));
+        this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+        this->getPhysicsWorld()->setGravity(Vec2(0, -100));
         auto hero = HeroCharacter::getInstance();
         hero->setPosition(100, 150);
         hero->idle(DIRECTION_RIGHT);
@@ -68,9 +68,6 @@ bool GameScene::onContactBegin(cocos2d::PhysicsContact &contact) {
 }
 
 bool GameScene::onContactPreSolve(cocos2d::PhysicsContact &contact, cocos2d::PhysicsContactPreSolve &solve){
-    if(HeroCharacter::getInstance()->getActionState() == ACTION_STATE_PUSH) {
-        this->pushDetective(contact);
-    }
     return true;
 }
 
@@ -86,6 +83,9 @@ Point GameScene::getReferencePoint() {
 }
 
 void GameScene::onJump() {
+    if (HeroCharacter::getInstance()->getActionState() == ACTION_STATE_PUSH) {
+        HeroCharacter::getInstance()->climb(HeroCharacter::getInstance()->getInteractiveTarget());
+    }
 }
 
 void GameScene::onSquat() {
@@ -117,7 +117,7 @@ void GameScene::initDynamicObjects(){
     steelBox = Sprite::create("steel_box.png");
     steelBox->setPosition(SteelBox1Position.x + steelBox->getContentSize().width/2, SteelBox1Position.y + steelBox->getContentSize().height/2);
     
-    auto steelShape = PhysicsShapeBox::create(steelBox->getContentSize(), PhysicsMaterial(78500.0f, 0, 0));
+    auto steelShape = PhysicsShapeBox::create(steelBox->getContentSize(), PhysicsMaterial(7850.0f, 0, 0));
     steelShape->setTag(ShapeTagBox);
     auto steelBoxBody = PhysicsBody::create();
     steelBoxBody->addShape(steelShape);

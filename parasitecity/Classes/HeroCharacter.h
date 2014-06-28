@@ -35,14 +35,17 @@ public:
     void climb(Sprite* target);
     void squat();
     void update(float dt);
+    void climbCallBack();
     
     // single instance
     static HeroCharacter* getInstance();
     CC_SYNTHESIZE(Direction, currentDirection, CurrentDirection);
+    CC_SYNTHESIZE(Sprite*, interactiveTarget, InteractiveTarget);
     
 private:
     static HeroCharacter* sharedHeroSprite;
     float walkSpeed;
     float pushSpeed;
     void move(float speed, float dt);
+    void addPushShape();
 };
