@@ -126,6 +126,12 @@
 		5155D09D195975DD003E3ECF /* steel_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 5155D099195975DD003E3ECF /* steel_box.png */; };
 		516FA9C41953E573002BB23F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 516FA9C31953E573002BB23F /* GameScene.cpp */; };
 		516FA9C51953E573002BB23F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 516FA9C31953E573002BB23F /* GameScene.cpp */; };
+		518EC6A719615B560033A344 /* DirectionPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 518EC6A619615B560033A344 /* DirectionPad.cpp */; };
+		518EC6A819615B560033A344 /* DirectionPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 518EC6A619615B560033A344 /* DirectionPad.cpp */; };
+		518EC6AA196163AC0033A344 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 518EC6A9196163AC0033A344 /* point.png */; };
+		518EC6AB196163AC0033A344 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 518EC6A9196163AC0033A344 /* point.png */; };
+		518EC6AD196251B60033A344 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = 518EC6AC196251B60033A344 /* star1.png */; };
+		518EC6AE196251B60033A344 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = 518EC6AC196251B60033A344 /* star1.png */; };
 		51AF14141958140700AA9D9D /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51AF14121958140700AA9D9D /* OptionLayer.cpp */; };
 		51AF14151958140700AA9D9D /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51AF14121958140700AA9D9D /* OptionLayer.cpp */; };
 		51AF141A195818D400AA9D9D /* pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AF1419195818D400AA9D9D /* pad.png */; };
@@ -387,6 +393,10 @@
 		5155D099195975DD003E3ECF /* steel_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = steel_box.png; sourceTree = "<group>"; };
 		516FA9C01953E562002BB23F /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
 		516FA9C31953E573002BB23F /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
+		518EC6A319615B3C0033A344 /* DirectionPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DirectionPad.h; path = ../Classes/DirectionPad.h; sourceTree = "<group>"; };
+		518EC6A619615B560033A344 /* DirectionPad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DirectionPad.cpp; path = ../Classes/DirectionPad.cpp; sourceTree = "<group>"; };
+		518EC6A9196163AC0033A344 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
+		518EC6AC196251B60033A344 /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
 		51AF14121958140700AA9D9D /* OptionLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionLayer.cpp; sourceTree = "<group>"; };
 		51AF14131958140700AA9D9D /* OptionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionLayer.h; sourceTree = "<group>"; };
 		51AF1419195818D400AA9D9D /* pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad.png; sourceTree = "<group>"; };
@@ -688,6 +698,8 @@
 				514F7C721952E59F00B80F2E /* Character.cpp */,
 				514F7C751952EB3F00B80F2E /* HeroCharacter.h */,
 				514F7C761952EB5A00B80F2E /* HeroCharacter.cpp */,
+				518EC6A319615B3C0033A344 /* DirectionPad.h */,
+				518EC6A619615B560033A344 /* DirectionPad.cpp */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -729,6 +741,8 @@
 		51AF14181958186700AA9D9D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				518EC6A9196163AC0033A344 /* point.png */,
+				518EC6AC196251B60033A344 /* star1.png */,
 				51AF1419195818D400AA9D9D /* pad.png */,
 			);
 			name = UI;
@@ -957,6 +971,7 @@
 				51D133D7195D089E0035BE52 /* climb02.png in Resources */,
 				514F7C591952E19400B80F2E /* hero_run06.png in Resources */,
 				51AF141A195818D400AA9D9D /* pad.png in Resources */,
+				518EC6AA196163AC0033A344 /* point.png in Resources */,
 				5155D09C195975DD003E3ECF /* steel_box.png in Resources */,
 				514F7C611952E19400B80F2E /* hero_squat_walk02.png in Resources */,
 				514F7C3B1952E19400B80F2E /* hero_push01.png in Resources */,
@@ -982,6 +997,7 @@
 				514F7C4D1952E19400B80F2E /* hero_run00.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				514F7C511952E19400B80F2E /* hero_run02.png in Resources */,
+				518EC6AD196251B60033A344 /* star1.png in Resources */,
 				514F7C331952E19400B80F2E /* hero_idle1.png in Resources */,
 				51D1340B195D35650035BE52 /* squat06.png in Resources */,
 				514F7C471952E19400B80F2E /* hero_push07.png in Resources */,
@@ -1012,6 +1028,7 @@
 				514F7C3E1952E19400B80F2E /* hero_push02.png in Resources */,
 				514F7C4E1952E19400B80F2E /* hero_run00.png in Resources */,
 				51D1340A195D35650035BE52 /* squat07.png in Resources */,
+				518EC6AE196251B60033A344 /* star1.png in Resources */,
 				51D1340E195D35650035BE52 /* squat05.png in Resources */,
 				514F7C621952E19400B80F2E /* hero_squat_walk02.png in Resources */,
 				51D1340C195D35650035BE52 /* squat06.png in Resources */,
@@ -1045,6 +1062,7 @@
 				514F7C5A1952E19400B80F2E /* hero_run06.png in Resources */,
 				51D13406195D35650035BE52 /* squat09.png in Resources */,
 				51D133D6195D089E0035BE52 /* climb01.png in Resources */,
+				518EC6AB196163AC0033A344 /* point.png in Resources */,
 				51D133D8195D089E0035BE52 /* climb02.png in Resources */,
 				514F7C3C1952E19400B80F2E /* hero_push01.png in Resources */,
 				51D13414195D35650035BE52 /* squat02.png in Resources */,
@@ -1062,6 +1080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				518EC6A719615B560033A344 /* DirectionPad.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				514F7C771952EB5A00B80F2E /* HeroCharacter.cpp in Sources */,
@@ -1084,6 +1103,7 @@
 				516FA9C51953E573002BB23F /* GameScene.cpp in Sources */,
 				514F7C781952EB5A00B80F2E /* HeroCharacter.cpp in Sources */,
 				51AF14151958140700AA9D9D /* OptionLayer.cpp in Sources */,
+				518EC6A819615B560033A344 /* DirectionPad.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #include "OptionLayer.h"
+#include "DirectionPad.h"
 #include <math.h>
 
 
@@ -17,6 +18,10 @@ OptionLayer::~OptionLayer() {}
 
 bool OptionLayer::init() {
 	if(Layer::init()){
+        auto dPad = DirectionPad::create();
+        dPad->setPosition(200, 200);
+        this->addChild(dPad);
+        
 		auto dispatcher = Director::getInstance()->getEventDispatcher();
         auto listener = EventListenerTouchAllAtOnce::create();
         listener->onTouchesBegan = CC_CALLBACK_2(OptionLayer::onTouchesBegan, this);
