@@ -7,12 +7,14 @@
 //
 
 #include "DirectionPad.h"
+#include "OvalActionInterval.h"
 #include <math.h>
 #define CoefficientConstant (sqrt(2) - 1)
 #define DefaultRadius 10.0f
 
 bool DirectionPad::init() {
     if (Sprite::init()) {
+        this->setPosition(100, 100);
         this->setRadius(DefaultRadius);
         this->buttonTop = this->createButton(DIRECTION_UP);
         this->addChild(this->buttonTop);
@@ -61,43 +63,49 @@ Sprite* DirectionPad::getDirectionButton(Direction direction) {
 
 RepeatForever* DirectionPad::createButtonPath(Direction direction) {
     ccBezierConfig bezierConfig;
-    float duration = 0.8;
-    float x = this->getPositionX();
-    float y = this->getPositionY();
-    MoveBy* move1 = nullptr;
-    MoveBy* move2 = nullptr;
-    BezierBy* bezierBy = nullptr;
+    float duration = 0.1;
+//    float x = 0;
+//    float y = 0;
+//    //MoveTo* moveTo = nullptr;
+//    MoveBy* move1 = nullptr;
+//    MoveBy* move2 = nullptr;
+//    BezierBy* bezierBy = nullptr;
     
-    if (direction == DIRECTION_UP) {
-        bezierConfig.controlPoint_1 = Vec2(x - this->getRadius(), y + CoefficientConstant*this->getRadius());
-        bezierConfig.controlPoint_2 = Vec2(x + this->getRadius(), y + CoefficientConstant*this->getRadius());
-        bezierConfig.endPosition = Vec2(x + this->getRadius(), y + sqrt(2)*this->getRadius());
-        bezierBy = BezierBy::create(0.8f, bezierConfig);
-        move1 = MoveBy::create(duration, Vec2(x, y + sqrt(3)*this->getRadius()));
-        move2 = MoveBy::create(duration, Vec2(x - this->getRadius(), y + sqrt(2)*this->getRadius()));
-    } else if(direction == DIRECTION_DOWN) {
-        bezierConfig.controlPoint_1 = Vec2(x - this->getRadius(), y - CoefficientConstant*this->getRadius());
-        bezierConfig.controlPoint_2 = Vec2(x + this->getRadius(), y - CoefficientConstant*this->getRadius());
-        bezierConfig.endPosition = Vec2(x + this->getRadius(), y - sqrt(2)*this->getRadius());
-        bezierBy = BezierBy::create(0.8f, bezierConfig);
-        move1 = MoveBy::create(duration, Vec2(x, y - sqrt(3)*this->getRadius()));
-        move2 = MoveBy::create(duration, Vec2(x - this->getRadius(), y - sqrt(2)*this->getRadius()));
-    } else if (direction == DIRECTION_LEFT) {
-        bezierConfig.controlPoint_1 = Vec2(y - this->getRadius(), x - CoefficientConstant*this->getRadius());
-        bezierConfig.controlPoint_2 = Vec2(y + this->getRadius(), x - CoefficientConstant*this->getRadius());
-        bezierConfig.endPosition = Vec2(y + this->getRadius(), x - sqrt(2)*this->getRadius());
-        bezierBy = BezierBy::create(0.8f, bezierConfig);
-        move1 = MoveBy::create(duration, Vec2(y, x - sqrt(3)*this->getRadius()));
-        move2 = MoveBy::create(duration, Vec2(y - this->getRadius(), x - sqrt(2)*this->getRadius()));
-    } else if (direction == DIRECTION_RIGHT){
-        bezierConfig.controlPoint_1 = Vec2(y - this->getRadius(), x + CoefficientConstant*this->getRadius());
-        bezierConfig.controlPoint_2 = Vec2(y + this->getRadius(), x + CoefficientConstant*this->getRadius());
-        bezierConfig.endPosition = Vec2(y + this->getRadius(), x + sqrt(2)*this->getRadius());
-        bezierBy = BezierBy::create(0.8f, bezierConfig);
-        move1 = MoveBy::create(duration, Vec2(y, x + sqrt(3)*this->getRadius()));
-        move2 = MoveBy::create(duration, Vec2(y - this->getRadius(), x + sqrt(2)*this->getRadius()));
-    }
-    return RepeatForever::create(Sequence::create(bezierBy, move1, move2, NULL));
+//    if (direction == DIRECTION_UP) {
+//        bezierConfig.controlPoint_1 = Vec2(x - this->getRadius(), y + CoefficientConstant*this->getRadius());
+//        bezierConfig.controlPoint_2 = Vec2(x + this->getRadius(), y + CoefficientConstant*this->getRadius());
+//        bezierConfig.endPosition = Vec2(x + this->getRadius(), y + sqrt(2)*this->getRadius());
+//        bezierBy = BezierBy::create(0.8f, bezierConfig);
+//        move1 = MoveBy::create(duration, Vec2(x, y + sqrt(3)*this->getRadius()));
+//        move2 = MoveBy::create(duration, Vec2(x - this->getRadius(), y + sqrt(2)*this->getRadius()));
+//    } else if(direction == DIRECTION_DOWN) {
+//        bezierConfig.controlPoint_1 = Vec2(x - this->getRadius(), y - CoefficientConstant*this->getRadius());
+//        bezierConfig.controlPoint_2 = Vec2(x + this->getRadius(), y - CoefficientConstant*this->getRadius());
+//        bezierConfig.endPosition = Vec2(x + this->getRadius(), y - sqrt(2)*this->getRadius());
+//        bezierBy = BezierBy::create(0.8f, bezierConfig);
+//        move1 = MoveBy::create(duration, Vec2(x, y - sqrt(3)*this->getRadius()));
+//        move2 = MoveBy::create(duration, Vec2(x - this->getRadius(), y - sqrt(2)*this->getRadius()));
+//    } else if (direction == DIRECTION_LEFT) {
+//        bezierConfig.controlPoint_1 = Vec2(y - this->getRadius(), x - CoefficientConstant*this->getRadius());
+//        bezierConfig.controlPoint_2 = Vec2(y + this->getRadius(), x - CoefficientConstant*this->getRadius());
+//        bezierConfig.endPosition = Vec2(y + this->getRadius(), x - sqrt(2)*this->getRadius());
+//        bezierBy = BezierBy::create(0.8f, bezierConfig);
+//        move1 = MoveBy::create(duration, Vec2(y, x - sqrt(3)*this->getRadius()));
+//        move2 = MoveBy::create(duration, Vec2(y - this->getRadius(), x - sqrt(2)*this->getRadius()));
+//    } else if (direction == DIRECTION_RIGHT){
+//        bezierConfig.controlPoint_1 = Vec2(y - this->getRadius(), x + CoefficientConstant*this->getRadius());
+//        bezierConfig.controlPoint_2 = Vec2(y + this->getRadius(), x + CoefficientConstant*this->getRadius());
+//        bezierConfig.endPosition = Vec2(y + this->getRadius(), x + sqrt(2)*this->getRadius());
+//        bezierBy = BezierBy::create(0.8f, bezierConfig);
+//        move1 = MoveBy::create(duration, Vec2(y, x + sqrt(3)*this->getRadius()));
+//        move2 = MoveBy::create(duration, Vec2(y - this->getRadius(), x + sqrt(2)*this->getRadius()));
+//    }
+    OvalConfig ovalConfig;
+    ovalConfig.aLength = 100;
+    ovalConfig.cLength = 80;
+    ovalConfig.centerPosition = Point::ZERO;
+    auto ovalActionInterval = OvalActionInterval::create(0.8, ovalConfig);
+    return RepeatForever::create(ovalActionInterval);
 }
 
 ParticleSystem* DirectionPad::createParticleLine() {

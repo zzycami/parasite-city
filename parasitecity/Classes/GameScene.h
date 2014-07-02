@@ -5,7 +5,7 @@
 //  Created by damingdan on 14-6-20.
 //
 //
-
+#pragma once
 #include "cocos2d.h"
 #include "OptionLayer.h"
 

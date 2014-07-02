@@ -160,6 +160,8 @@
 		51D13412195D35650035BE52 /* squat03.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D13403195D35650035BE52 /* squat03.png */; };
 		51D13413195D35650035BE52 /* squat02.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D13404195D35650035BE52 /* squat02.png */; };
 		51D13414195D35650035BE52 /* squat02.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D13404195D35650035BE52 /* squat02.png */; };
+		51ECC8FE1962BF16000FE9A5 /* OvalActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51ECC8FD1962BF16000FE9A5 /* OvalActionInterval.cpp */; };
+		51ECC8FF1962BF16000FE9A5 /* OvalActionInterval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51ECC8FD1962BF16000FE9A5 /* OvalActionInterval.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -412,6 +414,8 @@
 		51D13402195D35650035BE52 /* squat04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat04.png; sourceTree = "<group>"; };
 		51D13403195D35650035BE52 /* squat03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat03.png; sourceTree = "<group>"; };
 		51D13404195D35650035BE52 /* squat02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squat02.png; sourceTree = "<group>"; };
+		51ECC8FC1962BF01000FE9A5 /* OvalActionInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OvalActionInterval.h; path = ../Classes/OvalActionInterval.h; sourceTree = "<group>"; };
+		51ECC8FD1962BF16000FE9A5 /* OvalActionInterval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OvalActionInterval.cpp; path = ../Classes/OvalActionInterval.cpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -488,6 +492,7 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				51ECC8F91962BE88000FE9A5 /* Utils */,
 				514F7C701952E23900B80F2E /* Utilities */,
 				514F7C6F1952E22A00B80F2E /* AI */,
 				514F7C6E1952E21A00B80F2E /* Scenes */,
@@ -774,6 +779,15 @@
 			);
 			name = Squat;
 			path = squat;
+			sourceTree = "<group>";
+		};
+		51ECC8F91962BE88000FE9A5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				51ECC8FC1962BF01000FE9A5 /* OvalActionInterval.h */,
+				51ECC8FD1962BF16000FE9A5 /* OvalActionInterval.cpp */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
@@ -1083,6 +1097,7 @@
 				518EC6A719615B560033A344 /* DirectionPad.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				51ECC8FE1962BF16000FE9A5 /* OvalActionInterval.cpp in Sources */,
 				514F7C771952EB5A00B80F2E /* HeroCharacter.cpp in Sources */,
 				514F7C731952E59F00B80F2E /* Character.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -1097,6 +1112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
+				51ECC8FF1962BF16000FE9A5 /* OvalActionInterval.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				514F7C741952E59F00B80F2E /* Character.cpp in Sources */,
