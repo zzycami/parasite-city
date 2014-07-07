@@ -61,5 +61,7 @@ void OptionLayer::update(float dt) {
     } else if((position.y < 0) &&(position.y - position.x) < 0 && (position.y + position.x) < 0) {
         // down
         this->getDelegator()->onSquat();
+    } else if(position.x == 0 && position.y == 0) {
+        this->getDelegator()->onStop();
     }
 }

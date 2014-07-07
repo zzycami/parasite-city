@@ -169,7 +169,6 @@ void HeroCharacter::climb(cocos2d::Sprite *target) {
     this->setInteractiveTarget(target);
     if (this->getActionState() == ACTION_STATE_PUSH) {
         if(changeState(ACTION_STATE_CLIMB)) {
-            //this->getPhysicsBody()->setDynamic(false);
             auto actionDone = CallFunc::create(std::bind(&HeroCharacter::climbCallBack, this));
             auto sequence = Sequence::createWithTwoActions(this->getClimbAction(), actionDone);
             this->runAction(sequence);
@@ -181,7 +180,6 @@ void HeroCharacter::climbCallBack() {
     float afterPositionX = this->getInteractiveTarget()->getPositionX();
     float afterPositionY = this->getInteractiveTarget()->getPositionY() + this->getInteractiveTarget()->getContentSize().height/2 + this->getContentSize().height/2;
     this->setPosition(afterPositionX, afterPositionY);
-    this->getPhysicsBody()->setDynamic(true);
     this->getPhysicsBody()->setRotationEnable(false);
     Character::squat(this->getCurrentDirection());
 }
