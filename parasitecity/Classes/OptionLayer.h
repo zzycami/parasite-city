@@ -37,10 +37,5 @@ public:
     virtual bool init();
     CREATE_FUNC(OptionLayer);
     
-    // override
-    void onTouchesBegan(const std::vector<Touch*>& touches, Event *event);
-    void onTouchesMoved(const std::vector<Touch*>& touches, Event *event);
-    void onTouchesEnded(const std::vector<Touch*>& touches, Event *event);
-    
     CC_SYNTHESIZE(OptionDelegate*, delegator, Delegator);
 };

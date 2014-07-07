@@ -126,8 +126,6 @@
 		5155D09D195975DD003E3ECF /* steel_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 5155D099195975DD003E3ECF /* steel_box.png */; };
 		516FA9C41953E573002BB23F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 516FA9C31953E573002BB23F /* GameScene.cpp */; };
 		516FA9C51953E573002BB23F /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 516FA9C31953E573002BB23F /* GameScene.cpp */; };
-		518EC6A719615B560033A344 /* DirectionPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 518EC6A619615B560033A344 /* DirectionPad.cpp */; };
-		518EC6A819615B560033A344 /* DirectionPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 518EC6A619615B560033A344 /* DirectionPad.cpp */; };
 		518EC6AA196163AC0033A344 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 518EC6A9196163AC0033A344 /* point.png */; };
 		518EC6AB196163AC0033A344 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 518EC6A9196163AC0033A344 /* point.png */; };
 		518EC6AD196251B60033A344 /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = 518EC6AC196251B60033A344 /* star1.png */; };
@@ -136,6 +134,18 @@
 		51AF14151958140700AA9D9D /* OptionLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51AF14121958140700AA9D9D /* OptionLayer.cpp */; };
 		51AF141A195818D400AA9D9D /* pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AF1419195818D400AA9D9D /* pad.png */; };
 		51AF141B195818D400AA9D9D /* pad.png in Resources */ = {isa = PBXBuildFile; fileRef = 51AF1419195818D400AA9D9D /* pad.png */; };
+		51C12D73196A3F1E0005AA5D /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D72196A3F1E0005AA5D /* SneakyButton.cpp */; };
+		51C12D74196A3F1E0005AA5D /* SneakyButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D72196A3F1E0005AA5D /* SneakyButton.cpp */; };
+		51C12D77196A76120005AA5D /* UI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51C12D75196A76120005AA5D /* UI.plist */; };
+		51C12D78196A76120005AA5D /* UI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51C12D75196A76120005AA5D /* UI.plist */; };
+		51C12D79196A76120005AA5D /* UI.png in Resources */ = {isa = PBXBuildFile; fileRef = 51C12D76196A76120005AA5D /* UI.png */; };
+		51C12D7A196A76120005AA5D /* UI.png in Resources */ = {isa = PBXBuildFile; fileRef = 51C12D76196A76120005AA5D /* UI.png */; };
+		51C12D7D196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D7C196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp */; };
+		51C12D7E196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D7C196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp */; };
+		51C12D83196AB7380005AA5D /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D7F196AB7380005AA5D /* SneakyJoystick.cpp */; };
+		51C12D84196AB7380005AA5D /* SneakyJoystick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D7F196AB7380005AA5D /* SneakyJoystick.cpp */; };
+		51C12D85196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D81196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp */; };
+		51C12D86196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 51C12D81196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp */; };
 		51D133D5195D089E0035BE52 /* climb01.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D2195D089E0035BE52 /* climb01.png */; };
 		51D133D6195D089E0035BE52 /* climb01.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D2195D089E0035BE52 /* climb01.png */; };
 		51D133D7195D089E0035BE52 /* climb02.png in Resources */ = {isa = PBXBuildFile; fileRef = 51D133D3195D089E0035BE52 /* climb02.png */; };
@@ -402,6 +412,16 @@
 		51AF14121958140700AA9D9D /* OptionLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OptionLayer.cpp; sourceTree = "<group>"; };
 		51AF14131958140700AA9D9D /* OptionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionLayer.h; sourceTree = "<group>"; };
 		51AF1419195818D400AA9D9D /* pad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad.png; sourceTree = "<group>"; };
+		51C12D6F196A3D310005AA5D /* SneakyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SneakyButton.h; path = ../Classes/SneakyButton.h; sourceTree = "<group>"; };
+		51C12D72196A3F1E0005AA5D /* SneakyButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SneakyButton.cpp; path = ../Classes/SneakyButton.cpp; sourceTree = "<group>"; };
+		51C12D75196A76120005AA5D /* UI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UI.plist; sourceTree = "<group>"; };
+		51C12D76196A76120005AA5D /* UI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UI.png; sourceTree = "<group>"; };
+		51C12D7B196A79370005AA5D /* SneakyButtonSkinnedBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SneakyButtonSkinnedBase.h; path = ../Classes/SneakyButtonSkinnedBase.h; sourceTree = "<group>"; };
+		51C12D7C196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SneakyButtonSkinnedBase.cpp; path = ../Classes/SneakyButtonSkinnedBase.cpp; sourceTree = "<group>"; };
+		51C12D7F196AB7380005AA5D /* SneakyJoystick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystick.cpp; sourceTree = "<group>"; };
+		51C12D80196AB7380005AA5D /* SneakyJoystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystick.h; sourceTree = "<group>"; };
+		51C12D81196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SneakyJoystickSkinnedBase.cpp; sourceTree = "<group>"; };
+		51C12D82196AB7380005AA5D /* SneakyJoystickSkinnedBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SneakyJoystickSkinnedBase.h; sourceTree = "<group>"; };
 		51D133D2195D089E0035BE52 /* climb01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = climb01.png; sourceTree = "<group>"; };
 		51D133D3195D089E0035BE52 /* climb02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = climb02.png; sourceTree = "<group>"; };
 		51D133D4195D089E0035BE52 /* climb03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = climb03.png; sourceTree = "<group>"; };
@@ -705,6 +725,14 @@
 				514F7C761952EB5A00B80F2E /* HeroCharacter.cpp */,
 				518EC6A319615B3C0033A344 /* DirectionPad.h */,
 				518EC6A619615B560033A344 /* DirectionPad.cpp */,
+				51C12D72196A3F1E0005AA5D /* SneakyButton.cpp */,
+				51C12D6F196A3D310005AA5D /* SneakyButton.h */,
+				51C12D7B196A79370005AA5D /* SneakyButtonSkinnedBase.h */,
+				51C12D7C196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp */,
+				51C12D7F196AB7380005AA5D /* SneakyJoystick.cpp */,
+				51C12D80196AB7380005AA5D /* SneakyJoystick.h */,
+				51C12D81196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp */,
+				51C12D82196AB7380005AA5D /* SneakyJoystickSkinnedBase.h */,
 			);
 			name = Sprites;
 			sourceTree = "<group>";
@@ -746,6 +774,8 @@
 		51AF14181958186700AA9D9D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				51C12D75196A76120005AA5D /* UI.plist */,
+				51C12D76196A76120005AA5D /* UI.png */,
 				518EC6A9196163AC0033A344 /* point.png */,
 				518EC6AC196251B60033A344 /* star1.png */,
 				51AF1419195818D400AA9D9D /* pad.png */,
@@ -965,6 +995,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C12D79196A76120005AA5D /* UI.png in Resources */,
+				51C12D77196A76120005AA5D /* UI.plist in Resources */,
 				51D133D9195D089E0035BE52 /* climb03.png in Resources */,
 				51D133D5195D089E0035BE52 /* climb01.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
@@ -1040,6 +1072,7 @@
 				514F7C421952E19400B80F2E /* hero_push04.png in Resources */,
 				5155D09D195975DD003E3ECF /* steel_box.png in Resources */,
 				514F7C3E1952E19400B80F2E /* hero_push02.png in Resources */,
+				51C12D7A196A76120005AA5D /* UI.png in Resources */,
 				514F7C4E1952E19400B80F2E /* hero_run00.png in Resources */,
 				51D1340A195D35650035BE52 /* squat07.png in Resources */,
 				518EC6AE196251B60033A344 /* star1.png in Resources */,
@@ -1061,6 +1094,7 @@
 				514F7C541952E19400B80F2E /* hero_run03.png in Resources */,
 				51AF141B195818D400AA9D9D /* pad.png in Resources */,
 				514F7C681952E19400B80F2E /* hero_squat_walk05.png in Resources */,
+				51C12D78196A76120005AA5D /* UI.plist in Resources */,
 				514F7C441952E19400B80F2E /* hero_push05.png in Resources */,
 				514F7C401952E19400B80F2E /* hero_push03.png in Resources */,
 				514F7C501952E19400B80F2E /* hero_run01.png in Resources */,
@@ -1094,15 +1128,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				518EC6A719615B560033A344 /* DirectionPad.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				51ECC8FE1962BF16000FE9A5 /* OvalActionInterval.cpp in Sources */,
+				51C12D7D196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp in Sources */,
 				514F7C771952EB5A00B80F2E /* HeroCharacter.cpp in Sources */,
 				514F7C731952E59F00B80F2E /* Character.cpp in Sources */,
+				51C12D83196AB7380005AA5D /* SneakyJoystick.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				51C12D73196A3F1E0005AA5D /* SneakyButton.cpp in Sources */,
 				51AF14141958140700AA9D9D /* OptionLayer.cpp in Sources */,
 				516FA9C41953E573002BB23F /* GameScene.cpp in Sources */,
+				51C12D85196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1113,13 +1150,16 @@
 			files = (
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
 				51ECC8FF1962BF16000FE9A5 /* OvalActionInterval.cpp in Sources */,
+				51C12D84196AB7380005AA5D /* SneakyJoystick.cpp in Sources */,
+				51C12D74196A3F1E0005AA5D /* SneakyButton.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				51C12D7E196AA55E0005AA5D /* SneakyButtonSkinnedBase.cpp in Sources */,
 				514F7C741952E59F00B80F2E /* Character.cpp in Sources */,
 				516FA9C51953E573002BB23F /* GameScene.cpp in Sources */,
 				514F7C781952EB5A00B80F2E /* HeroCharacter.cpp in Sources */,
 				51AF14151958140700AA9D9D /* OptionLayer.cpp in Sources */,
-				518EC6A819615B560033A344 /* DirectionPad.cpp in Sources */,
+				51C12D86196AB7380005AA5D /* SneakyJoystickSkinnedBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
