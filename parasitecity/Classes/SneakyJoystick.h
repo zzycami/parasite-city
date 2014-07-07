@@ -24,6 +24,8 @@ protected:
 	virtual ~SneakyJoystick();
 
 	bool initWithRect(cocos2d::Rect rect);
+    static SneakyJoystick* createWithRect(cocos2d::Rect rect);
+    
 	virtual void onEnterTransitionDidFinish();
 	void setIsDPad(bool b);
 	void setJoystickRadius(float r);

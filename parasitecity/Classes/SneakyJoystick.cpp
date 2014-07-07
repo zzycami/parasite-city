@@ -32,6 +32,18 @@ bool SneakyJoystick::initWithRect(Rect rect){
     }
 }
 
+SneakyJoystick* SneakyJoystick::createWithRect(cocos2d::Rect rect) {
+    auto sneakyJoystick = new SneakyJoystick();
+    if (sneakyJoystick && sneakyJoystick->initWithRect(rect)) {
+        sneakyJoystick->autorelease();
+        return sneakyJoystick;
+    }else {
+        delete sneakyJoystick;
+        sneakyJoystick = nullptr;
+        return nullptr;
+    }
+}
+
 void SneakyJoystick::onEnterTransitionDidFinish() {
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     auto listener = EventListenerTouchOneByOne::create();

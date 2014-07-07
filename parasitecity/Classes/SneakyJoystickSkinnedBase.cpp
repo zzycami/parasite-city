@@ -20,7 +20,7 @@ SneakyJoystickSkinnedBase::~SneakyJoystickSkinnedBase() {
 
 bool SneakyJoystickSkinnedBase::init() {
 	bool pRet = false;
-	if(CCLayer::init()){
+	if(Layer::init()){
 		this->backgroundSprite = NULL;
 		this->thumbSprite = NULL;
 		this->joystick = NULL;

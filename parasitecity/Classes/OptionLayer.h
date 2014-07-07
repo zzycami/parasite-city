@@ -8,6 +8,7 @@
 
 #pragma once
 #include "cocos2d.h"
+#include "SneakyJoystick.h"
 using namespace cocos2d;
 
 const int JoystickBgRadius = 64;
@@ -37,5 +38,9 @@ public:
     virtual bool init();
     CREATE_FUNC(OptionLayer);
     
+    virtual void update(float dt);
+    
     CC_SYNTHESIZE(OptionDelegate*, delegator, Delegator);
+private:
+    SneakyJoystick *joystick;
 };

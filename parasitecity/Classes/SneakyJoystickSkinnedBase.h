@@ -12,7 +12,7 @@ class SneakyJoystickSkinnedBase : public cocos2d::Layer {
 	//Public methods
 	CREATE_FUNC(SneakyJoystickSkinnedBase);
 	virtual ~SneakyJoystickSkinnedBase();
-	bool init();
+	virtual bool init();
 	void updatePositions(float delta);
 	void setContentSize(cocos2d::Size s);
 	void setBackgroundSprite(cocos2d::Sprite *aSprite);
